@@ -1,0 +1,8 @@
+:root {
+	--text-black: #000;
+	--text-white: #fff;
+}
+
+html {
+	font-size: 62.5%;
+}
