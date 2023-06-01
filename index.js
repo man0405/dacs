@@ -91,7 +91,7 @@ nextBtn.addEventListener("click", () => {
 	setTimeout(() => {
 		thumbnailListWrapper.children[0].remove();
 		canBeClicked = true;
-	}, 1000);
+	}, 800);
 	for (let i = 2; i < thumbnailListWrapper.childElementCount; i++) {
 		thumbnailListWrapper.children[i].style = `--idx: ${i - 2}`;
 	}

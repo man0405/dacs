@@ -7,10 +7,32 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.container {
+  width: 120rem;
+  height: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
@@ -30,27 +52,40 @@ button:hover {
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  min-width: 100vw;
+  overflow: hidden;
   background-color: #f6f6f6;
+  position: relative;
 }
 header .container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
   background-color: #767676;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  margin: 0 auto;
   color: white;
+}
+header .container nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 30;
+}
+header .container nav .logo {
+  width: 15rem;
+  height: 5rem;
+  background-color: red;
+}
+header .container nav ul {
+  display: flex;
+}
+header .container nav ul li {
+  margin-left: 30px;
+  cursor: pointer;
 }
 header .container .content {
   width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 header .container .content .introduce {
   position: relative;
@@ -111,12 +146,10 @@ header .container .content .introduce .wrapper span .discover-button {
   margin-top: 2rem;
 }
 header .container .content .thumbnail-list {
-  position: relative;
   height: 30rem;
   flex: 1;
 }
 header .container .content .thumbnail-list .wrapper {
-  position: relative;
   z-index: 10;
   height: 30rem;
 }
@@ -135,7 +168,7 @@ header .container .content .thumbnail-list .wrapper .thumbnail.zoom {
   width: 100vw;
   height: 100vh;
   /* transform: translate(calc(100vw / -3 * 1.2), calc(100vh / -4 * 0.28)); */
-  transform: translate(-40vw, calc(73% - 100vh));
+  transform: translate(calc((-100vw + 200px + 40px) / 2), calc((-100vh + 300px + 100px) / 2));
   filter: brightness(40%);
   box-shadow: none;
 }
