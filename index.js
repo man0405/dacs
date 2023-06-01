@@ -78,16 +78,20 @@ for (let i = 1; i < data.length; i++) {
 
 const nextBtn = document.querySelector(".navigation .next-button");
 let currentIndex = 0;
+let canBeClicked = true;
 nextBtn.addEventListener("click", () => {
-	nextBtn.disable = true;
+	if (!canBeClicked) {
+		return;
+	}
+	canBeClicked = false;
 	let clone = thumbnailListWrapper.children[0].cloneNode(true);
 	clone.classList.remove("zoom");
 	thumbnailListWrapper.appendChild(clone);
 	thumbnailListWrapper.children[1].classList.add("zoom");
 	setTimeout(() => {
 		thumbnailListWrapper.children[0].remove();
-		nextBtn.disable = false;
-	}, 500);
+		canBeClicked = true;
+	}, 1000);
 	for (let i = 2; i < thumbnailListWrapper.childElementCount; i++) {
 		thumbnailListWrapper.children[i].style = `--idx: ${i - 2}`;
 	}
