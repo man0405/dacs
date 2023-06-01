@@ -1,0 +1,15 @@
+button {
+	background-color: transparent;
+	border: 1px solid white;
+	color: inherit;
+	font-size: 1rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	height: 50px;
+	transition: 0.5 ease;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.4);
+}
