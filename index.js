@@ -33,6 +33,20 @@ const data = [
 			"TheTown State 5 address is available only for registration purposes only",
 		image: "./image/photo-1580216643062-cf460548a66a.png",
 	},
+	{
+		name: "Town State 6",
+		address: "John Street",
+		description:
+			"The Town State 6 address is available for registration purposes only",
+		image: "./image/photo-1459767129954-1b1c1f9b9ace.png",
+	},
+	{
+		name: "Town State 7",
+		address: "John Street",
+		description:
+			"The Town State 7 address is available for registration purposes only",
+		image: "./image/photo-1459767129954-1b1c1f9b9ace.png",
+	},
 ];
 
 const introduce = document.querySelector(".introduce");

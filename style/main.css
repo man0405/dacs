@@ -68,6 +68,7 @@ header .container nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
   z-index: 30;
 }
 header .container nav .logo {
@@ -168,7 +169,7 @@ header .container .content .thumbnail-list .wrapper .thumbnail.zoom {
   width: 100vw;
   height: 100vh;
   /* transform: translate(calc(100vw / -3 * 1.2), calc(100vh / -4 * 0.28)); */
-  transform: translate(calc((-100vw + 200px + 40px) / 2), calc((-100vh + 300px + 100px) / 2));
+  transform: translate(calc((100vw - 200px - 40px) / -2), calc((-100vh + 300px + 100px) / 2));
   filter: brightness(40%);
   box-shadow: none;
 }
