@@ -1,3 +1,4 @@
+
 const data = [
 	{
 		name: "Town State 1",
@@ -120,3 +121,4 @@ nextBtn.addEventListener("click", () => {
 	ordinalNumber.children[currentIndex].classList.add("active");
 	ordinalNumber.children[currentIndex].textContent = `0${currentIndex + 1}`;
 });
+
