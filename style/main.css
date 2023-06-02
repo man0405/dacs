@@ -1,6 +1,7 @@
 :root {
-  --text-black: #000;
-  --text-white: #fff;
+  --text-color: #000;
+  --primary-color: blue;
+  --primary-font: "Prompt";
 }
 
 html {
@@ -8,6 +9,7 @@ html {
 }
 
 body {
+  font-family: var(--primary-font);
   font-size: 1.6rem;
   line-height: 1.5;
   font-weight: 500;
@@ -43,7 +45,8 @@ button {
   font-weight: 500;
   text-transform: uppercase;
   height: 50px;
-  transition: 0.5 ease;
+  border-radius: 50px;
+  min-width: 10rem;
 }
 
 button:hover {
@@ -87,12 +90,14 @@ header .container .content {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 header .container .content .introduce {
   position: relative;
   width: 40%;
-  height: 100%;
+  height: 50%;
   z-index: 20;
+  margin-right: 30px;
 }
 header .container .content .introduce .wrapper {
   position: absolute;
@@ -125,11 +130,11 @@ header .container .content .introduce .wrapper span > * {
 }
 header .container .content .introduce .wrapper span .address {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 header .container .content .introduce .wrapper span .name {
   font-size: 5.5rem;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   line-height: 1.1;
   letter-spacing: 1px;
@@ -138,13 +143,14 @@ header .container .content .introduce .wrapper span .name {
 header .container .content .introduce .wrapper span .description {
   font-size: 1rem;
   margin-top: 0.8rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 header .container .content .introduce .wrapper span .discover-button {
   width: 25rem;
   height: 5rem;
   border-radius: 50px;
   margin-top: 2rem;
+  transition: 0.5s ease;
 }
 header .container .content .thumbnail-list {
   height: 30rem;
@@ -169,7 +175,7 @@ header .container .content .thumbnail-list .wrapper .thumbnail.zoom {
   width: 100vw;
   height: 100vh;
   /* transform: translate(calc(100vw / -3 * 1.2), calc(100vh / -4 * 0.28)); */
-  transform: translate(calc((100vw - 200px - 40px) / -2), calc((-100vh + 300px + 100px) / 2));
+  transform: translate(calc((100vw - 200px - 40px) / -2 - 30px), calc((-100vh + 300px + 100px) / 2));
   filter: brightness(40%);
   box-shadow: none;
 }
