@@ -1,8 +1,6 @@
 @import "./abstracts/variables";
 
-@import "./base/general";
-@import "./base/reset";
-@import "./base/typography";
+@import "./base/general", "./base/reset", "./base/typography";
 
 @import "./components/button";
 
