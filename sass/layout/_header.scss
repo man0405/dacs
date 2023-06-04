@@ -2,13 +2,10 @@ header {
 	// height: 100vh;
 	// width: 100vw;
 	overflow: hidden;
-	background-color: #f6f6f6;
 	position: relative;
 
 	.container {
-		// width: 120rem;
-		// height: 100vh;
-		background-color: #767676;
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -19,7 +16,7 @@ header {
 			justify-content: space-between;
 			align-items: center;
 			padding: 0 10px;
-			z-index: 30;
+			// z-index: 3;
 			.logo {
 				width: 15rem;
 				height: 5rem;
@@ -42,7 +39,7 @@ header {
 				position: relative;
 				width: 40%;
 				height: 50%;
-				z-index: 20;
+				// z-index: 2;
 				margin-right: 30px;
 				.wrapper {
 					position: absolute;
@@ -102,7 +99,7 @@ header {
 				height: 30rem;
 				flex: 1;
 				.wrapper {
-					z-index: 10;
+					// z-index: 1;
 					height: 30rem;
 					.thumbnail {
 						position: absolute;
@@ -114,6 +111,7 @@ header {
 						transform: translateX(calc(var(--idx) * 23rem));
 						box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
 						&.zoom {
+							z-index: -1;
 							border-radius: 0;
 							width: 100vw;
 							height: 100vh;
@@ -142,7 +140,7 @@ header {
 			align-items: center;
 			gap: 20px;
 			padding: 50px 50px 50px 0;
-			z-index: 20;
+			// z-index: 2;
 			.next-button {
 				width: 18rem;
 				border-radius: 50px;

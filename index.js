@@ -120,3 +120,27 @@ nextBtn.addEventListener("click", () => {
 	ordinalNumber.children[currentIndex].classList.add("active");
 	ordinalNumber.children[currentIndex].textContent = `0${currentIndex + 1}`;
 });
+
+const intro = document.querySelector(".intro");
+const main = intro.parentNode;
+const h = intro.querySelector(".header");
+const iconIntro = h.children[1];
+
+console.log(iconIntro);
+intro.addEventListener("click", (e) => {
+	if (!h.matches(".close")) {
+		iconIntro.setAttribute("name", "chevron-down-outline");
+		intro.classList.add("active");
+	}
+});
+
+document.addEventListener("click", function (e) {
+	if (
+		e.target.matches(".close") ||
+		(e.target.matches(".md") && intro.classList.contains("active")) ||
+		!intro.contains(e.target)
+	) {
+		iconIntro.setAttribute("name", "chevron-up-outline");
+		intro.classList.remove("active");
+	}
+});
