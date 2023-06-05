@@ -29,6 +29,16 @@ body {
   background: rgba(0, 0, 0, 0.75);
 }
 
+.line-effect {
+  width: 0;
+  z-index: 2;
+  height: 2px;
+  background-color: white;
+  position: fixed;
+  pointer-events: none;
+  transition: all 0.25s linear;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -64,18 +74,23 @@ h6 {
 
 button {
   background-color: transparent;
-  border: 1px solid white;
   color: inherit;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
   height: 50px;
-  border-radius: 50px;
   min-width: 10rem;
 }
-
 button:hover {
   cursor: pointer;
+}
+
+.btn-border {
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+.btn-border:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -117,6 +132,10 @@ header .container nav ul {
 header .container nav ul li {
   margin-left: 30px;
   cursor: pointer;
+}
+header .container nav ul li button {
+  font-size: 1.6rem;
+  border: none;
 }
 header .container .content {
   width: 100%;
@@ -160,7 +179,7 @@ header .container .content .introduce .wrapper span > * {
   transition-delay: calc((3 - var(--idx)) * 0.1s);
 }
 header .container .content .introduce .wrapper span .address {
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 500;
 }
 header .container .content .introduce .wrapper span .name {
@@ -172,7 +191,7 @@ header .container .content .introduce .wrapper span .name {
   margin-top: 1rem;
 }
 header .container .content .introduce .wrapper span .description {
-  font-size: 1rem;
+  font-size: 1.6rem;
   margin-top: 0.8rem;
   font-weight: 400;
 }
@@ -267,7 +286,7 @@ main .intro {
   transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 }
 main .intro.active {
-  transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+  transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
   overflow-y: auto;
   transform: translateY(-90%);
 }
@@ -312,6 +331,9 @@ main .intro .body .gallery h2 {
 }
 main .intro .body .gallery .gallery-list {
   overflow: hidden;
+}
+main .intro .body .gallery .gallery-list .gallery-item {
+  margin-bottom: 2.4rem;
 }
 main .intro .body .gallery .gallery-list .gallery-item .name-town {
   font-size: 2.4rem;

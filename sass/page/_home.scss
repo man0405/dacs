@@ -17,7 +17,7 @@ main {
 
 		transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 		&.active {
-			transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+			transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 			overflow-y: auto;
 			transform: translateY(-90%);
 			.header {
@@ -68,6 +68,7 @@ main {
 				.gallery-list {
 					overflow: hidden;
 					.gallery-item {
+						margin-bottom: 2.4rem;
 						.name-town {
 							font-size: 2.4rem;
 							margin-bottom: 0.5rem;

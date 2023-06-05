@@ -1,17 +1,21 @@
 button {
 	background-color: transparent;
-	border: 1px solid white;
 	color: inherit;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: 500;
 	text-transform: uppercase;
 	height: 50px;
-	border-radius: 50px;
 	min-width: 10rem;
+	&:hover {
+		cursor: pointer;
+	}
 }
 
-button:hover {
-	cursor: pointer;
+.btn-border {
+	border: 1px solid white;
+	border-radius: 50px;
+}
+.btn-border:hover {
 	background-color: rgba(255, 255, 255, 0.4);
 }
 

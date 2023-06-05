@@ -68,7 +68,7 @@ for (let i = 0; i < data.length; i++) {
                 <p class="description" style="--idx: 2">${data[i].description}</p>
             </span>
             <span>
-                <button class="discover-button" style="--idx: 3">Discover now</button>
+                <button class="discover-button btn-border" style="--idx: 3">Discover now</button>
             </span>
         </div>`;
 
@@ -135,12 +135,32 @@ intro.addEventListener("click", (e) => {
 });
 
 document.addEventListener("click", function (e) {
-	if (
-		e.target.matches(".close") ||
-		(e.target.matches(".md") && intro.classList.contains("active")) ||
-		!intro.contains(e.target)
-	) {
-		iconIntro.setAttribute("name", "chevron-up-outline");
-		intro.classList.remove("active");
+	if (intro.classList.contains("active")) {
+		if (
+			e.target.matches(".close") ||
+			(e.target.matches(".md") && intro.classList.contains("active")) ||
+			!intro.contains(e.target)
+		) {
+			iconIntro.setAttribute("name", "chevron-up-outline");
+			intro.classList.remove("active");
+		}
 	}
+});
+
+const links = [...document.querySelectorAll(".menu-link")];
+const line = document.createElement("div");
+const menu = document.querySelector(".nav");
+line.className = "line-effect";
+document.body.appendChild(line);
+links.forEach((item) => {
+	item.addEventListener("mouseenter", (e) => {
+		const { top, left, width, height } = e.target.getBoundingClientRect();
+		const offsetBottom = 5;
+		line.style.top = `${top + height + offsetBottom}px`;
+		line.style.left = `${left}px`;
+		line.style.width = `${width}px`;
+	});
+});
+menu.addEventListener("mouseleave", () => {
+	line.style.width = 0;
 });
