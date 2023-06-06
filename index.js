@@ -121,13 +121,11 @@ nextBtn.addEventListener("click", () => {
 	ordinalNumber.children[currentIndex].textContent = `0${currentIndex + 1}`;
 });
 
-
 const signin = document.querySelector(".signin");
 const modal = document.querySelector(".modal");
-signin.addEventListener("click",()=>{
+signin.addEventListener("click", () => {
 	modal.classList.add("active");
-})
-=======
+});
 const intro = document.querySelector(".intro");
 const main = intro.parentNode;
 const h = intro.querySelector(".header");
@@ -201,4 +199,3 @@ links.forEach((item) => {
 menu.addEventListener("mouseleave", () => {
 	line.style.width = 0;
 });
-

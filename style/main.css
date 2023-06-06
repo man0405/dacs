@@ -90,8 +90,29 @@ button {
 }
 button:hover {
   cursor: pointer;
+}
 
+button:hover {
+  cursor: pointer;
   background-color: red;
+}
+
+.btn-border {
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+.btn-border:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-full:hover {
+  filter: brightness(95%);
 }
 
 .modal-login {
@@ -120,17 +141,6 @@ button:hover {
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 50px 35px;
   position: relative;
-=======
-}
-
-.btn-border {
-  border: 1px solid white;
-  border-radius: 50px;
-}
-
-.btn-border:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-
 }
 .modal-login .modal-container .modal-close {
   position: absolute;
@@ -228,19 +238,7 @@ button:hover {
       modal-body
       modal-footer
 
-
 */
-=======
-.btn-full {
-  width: 100%;
-  text-align: center;
-}
-
-.btn-full:hover {
-  filter: brightness(95%);
-}
-
-
 header {
   overflow: hidden;
   position: relative;
@@ -258,10 +256,6 @@ header .container nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-
-  z-index: 2;
-=======
-
 }
 header .container nav .logo {
   width: 15rem;
@@ -289,10 +283,6 @@ header .container .content .introduce {
   position: relative;
   width: 40%;
   height: 50%;
-
-  z-index: 2;
-=======
-
   margin-right: 30px;
 }
 header .container .content .introduce .wrapper {
@@ -386,10 +376,6 @@ header .container .navigation {
   align-items: center;
   gap: 20px;
   padding: 50px 50px 50px 0;
-
-  z-index: 1;
-=======
-
 }
 header .container .navigation .next-button {
   width: 18rem;
