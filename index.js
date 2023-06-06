@@ -68,7 +68,7 @@ for (let i = 0; i < data.length; i++) {
                 <p class="description" style="--idx: 2">${data[i].description}</p>
             </span>
             <span>
-                <button class="discover-button" style="--idx: 3">Discover now</button>
+                <button class="discover-button btn-border" style="--idx: 3">Discover now</button>
             </span>
         </div>`;
 
@@ -119,4 +119,78 @@ nextBtn.addEventListener("click", () => {
 	introduce.children[currentIndex].classList.add("active");
 	ordinalNumber.children[currentIndex].classList.add("active");
 	ordinalNumber.children[currentIndex].textContent = `0${currentIndex + 1}`;
+});
+
+const intro = document.querySelector(".intro");
+const main = intro.parentNode;
+const h = intro.querySelector(".header");
+const iconIntro = h.children[1];
+
+console.log(iconIntro);
+intro.addEventListener("click", (e) => {
+	if (!h.matches(".close")) {
+		iconIntro.setAttribute("name", "chevron-down-outline");
+		intro.classList.add("active");
+	}
+});
+
+const booking = document.querySelector(".booking");
+const headerBooking = booking.querySelector(".header");
+const arrowIcon = headerBooking.children[1];
+const btnBooking = document.querySelector(".btn-private");
+const btnBooking1 = document.querySelector(".btn-private-1");
+
+btnBooking.addEventListener("click", (e) => {
+	showBooking();
+});
+btnBooking1.addEventListener("click", (e) => {
+	showBooking();
+});
+function showBooking() {
+	if (!booking.classList.contains("active")) {
+		arrowIcon.setAttribute("name", "chevron-down-outline");
+		booking.classList.add("active");
+	}
+}
+
+document.addEventListener("click", function (e) {
+	if (intro.classList.contains("active")) {
+		if (
+			e.target.matches(".close") ||
+			(e.target.matches(".md") && intro.classList.contains("active")) ||
+			!intro.contains(e.target)
+		) {
+			iconIntro.setAttribute("name", "chevron-up-outline");
+			intro.classList.remove("active");
+		}
+	}
+	if (booking.classList.contains("active")) {
+		if (
+			!booking.contains(e.target) &&
+			!e.target.matches(".btn-private") &&
+			!e.target.matches(".btn-private-1")
+		) {
+			arrowIcon.setAttribute("name", "chevron-down-outline");
+			booking.classList.remove("active");
+		}
+	}
+});
+
+// menu link
+const links = [...document.querySelectorAll(".menu-link")];
+const line = document.createElement("div");
+const menu = document.querySelector(".nav");
+line.className = "line-effect";
+document.body.appendChild(line);
+links.forEach((item) => {
+	item.addEventListener("mouseenter", (e) => {
+		const { top, left, width, height } = e.target.getBoundingClientRect();
+		const offsetBottom = 5;
+		line.style.top = `${top + height + offsetBottom}px`;
+		line.style.left = `${left}px`;
+		line.style.width = `${width}px`;
+	});
+});
+menu.addEventListener("mouseleave", () => {
+	line.style.width = 0;
 });
