@@ -72,13 +72,20 @@ h6 {
   line-height: 1.5;
 }
 
+.heading {
+  text-transform: uppercase;
+  font-size: 7.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
 button {
   background-color: transparent;
   color: inherit;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   text-transform: uppercase;
-  height: 50px;
+  min-height: 50px;
   min-width: 10rem;
 }
 button:hover {
@@ -272,13 +279,15 @@ header .container .navigation .ordinal-number h2.active {
 }
 
 main {
+  position: relative;
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 90%);
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 main .intro {
+  width: 90%;
+  margin: 0 auto;
   background-color: white;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   height: 80vh;
@@ -287,27 +296,27 @@ main .intro {
 }
 main .intro.active {
   transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
-  overflow-y: auto;
+  overflow-y: scroll;
   transform: translateY(-90%);
 }
 main .intro.active .header button {
   display: block;
 }
-main .intro.active .header ion-icon {
-  margin: 0;
-}
 main .intro .header {
   display: flex;
-  align-items: center;
   column-gap: calc(50% - 100px);
   margin-bottom: 12rem;
+  position: relative;
 }
-main .intro .header button {
+main .intro .header .close {
+  position: absolute;
+  top: 0;
+  left: 0;
   font-size: 1.6rem;
   display: none;
 }
 main .intro .header ion-icon {
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   margin: 0 auto;
 }
 main .intro .body .name-brand {
@@ -367,6 +376,103 @@ main .intro .footer .partners .partners-icon {
 }
 main .intro .footer button {
   background-color: #dadada;
+}
+main .booking {
+  position: absolute;
+  background-color: white;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 4.6rem 10.2rem;
+  transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+}
+main .booking.active {
+  transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+  overflow-y: scroll;
+  transform: translateY(-140vh);
+}
+main .booking.active .header button {
+  display: block;
+}
+main .booking .header {
+  display: flex;
+  column-gap: calc(50% - 100px);
+  margin-bottom: 12rem;
+  position: relative;
+}
+main .booking .header .close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.6rem;
+  display: none;
+}
+main .booking .header ion-icon {
+  font-size: 3.4rem;
+  margin: 0 auto;
+}
+main .booking .body .description {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 3.6rem;
+}
+main .booking .body form {
+  margin-bottom: 4rem;
+}
+main .booking .body form h3 {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  margin-bottom: 3.6rem;
+}
+main .booking .body form .list-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+main .booking .body form .list-input .box {
+  position: relative;
+  height: 8rem;
+}
+main .booking .body form .list-input .box input {
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  border-radius: 1rem;
+  border: 1px solid #545454;
+  padding: 2rem;
+  outline: none;
+}
+main .booking .body form .list-input .box label {
+  position: absolute;
+  font-size: 1.8rem;
+  color: #535353;
+  user-select: text;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.5rem;
+  transition: all 0.1s linear;
+}
+main .booking .body form .list-input .box input:focus ~ label,
+main .booking .body form .list-input .box input:not(:placeholder-shown) ~ label {
+  top: 0;
+  font-size: 2rem;
+  color: #545454;
+  background-color: #fff;
+  padding: 0 1rem;
+}
+main .booking .body button {
+  border: 1px solid black;
+}
+main .booking .body button:hover {
+  filter: brightness(80%);
+}
+
+.btn-private {
+  position: absolute;
+  bottom: 5%;
+  left: 8%;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1.8rem 3.8rem;
 }
 
 /*# sourceMappingURL=main.css.map */

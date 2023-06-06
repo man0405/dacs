@@ -134,6 +134,25 @@ intro.addEventListener("click", (e) => {
 	}
 });
 
+const booking = document.querySelector(".booking");
+const headerBooking = booking.querySelector(".header");
+const arrowIcon = headerBooking.children[1];
+const btnBooking = document.querySelector(".btn-private");
+const btnBooking1 = document.querySelector(".btn-private-1");
+
+btnBooking.addEventListener("click", (e) => {
+	showBooking();
+});
+btnBooking1.addEventListener("click", (e) => {
+	showBooking();
+});
+function showBooking() {
+	if (!booking.classList.contains("active")) {
+		arrowIcon.setAttribute("name", "chevron-down-outline");
+		booking.classList.add("active");
+	}
+}
+
 document.addEventListener("click", function (e) {
 	if (intro.classList.contains("active")) {
 		if (
@@ -145,8 +164,19 @@ document.addEventListener("click", function (e) {
 			intro.classList.remove("active");
 		}
 	}
+	if (booking.classList.contains("active")) {
+		if (
+			!booking.contains(e.target) &&
+			!e.target.matches(".btn-private") &&
+			!e.target.matches(".btn-private-1")
+		) {
+			arrowIcon.setAttribute("name", "chevron-down-outline");
+			booking.classList.remove("active");
+		}
+	}
 });
 
+// menu link
 const links = [...document.querySelectorAll(".menu-link")];
 const line = document.createElement("div");
 const menu = document.querySelector(".nav");
