@@ -90,6 +90,37 @@ button {
 }
 button:hover {
   cursor: pointer;
+
+  background-color: red;
+}
+
+.modal-login {
+  z-index: 100;
+  font-family: sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-login .modal-container {
+  height: 650px;
+  width: 500px;
+  border-radius: 2rem;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  position: relative;
+=======
 }
 
 .btn-border {
@@ -99,8 +130,107 @@ button:hover {
 
 .btn-border:hover {
   background-color: rgba(255, 255, 255, 0.4);
+
+}
+.modal-login .modal-container .modal-close {
+  position: absolute;
+  background-color: white;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding: 2rem;
+  cursor: pointer;
+}
+.modal-login .modal-container .modal-close ion-icon {
+  font-size: 1.8rem;
+  color: black;
+}
+.modal-login .modal-container .modal-header {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  margin-bottom: 4rem;
+  background-color: inherit;
+}
+.modal-login .modal-container .modal-button {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 0.1rem;
+  margin-top: 5rem;
+  background-color: #ffffff;
+  color: black;
+  transition: 1s;
+  display: flex;
+}
+.modal-login .modal-container .modal-body {
+  padding-inline: 30px;
+}
+.modal-login .modal-container .modal-body .modal-input-box {
+  position: relative;
+  margin-bottom: 8rem;
+}
+.modal-login .modal-container .modal-body .modal-input-box .modal-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 2rem;
+  transition: all 0.1s linear;
+}
+.modal-login .modal-container .modal-body .modal-input-box .modal-input {
+  background-color: transparent;
+  height: 100%;
+  padding: 3rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  border: 0px none;
+  padding: 1rem;
+  font-size: 2rem;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+}
+.modal-login .modal-container .modal-body .modal-input-box .modal-input:focus ~ .modal-label,
+.modal-login .modal-container .modal-body .modal-input-box .modal-input:not(:placeholder-shown) ~ .modal-label {
+  padding: 0 2rem;
+  top: -1rem;
+}
+.modal-login .modal-container .modal-body .modal-button:hover {
+  color: #ffffff;
+  background-color: transparent;
+}
+.modal-login .modal-container .modal-body .modal-icon {
+  position: absolute;
+  right: 0;
+  font-style: 1.2em;
+  color: white;
 }
 
+/*
+  .modal-login{
+    .modal-container
+      modal-close
+      modal-header
+      modal-body
+      modal-footer
+
+
+*/
+=======
 .btn-full {
   width: 100%;
   text-align: center;
@@ -109,6 +239,7 @@ button:hover {
 .btn-full:hover {
   filter: brightness(95%);
 }
+
 
 header {
   overflow: hidden;
@@ -127,6 +258,10 @@ header .container nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
+
+  z-index: 2;
+=======
+
 }
 header .container nav .logo {
   width: 15rem;
@@ -154,6 +289,10 @@ header .container .content .introduce {
   position: relative;
   width: 40%;
   height: 50%;
+
+  z-index: 2;
+=======
+
   margin-right: 30px;
 }
 header .container .content .introduce .wrapper {
@@ -247,6 +386,10 @@ header .container .navigation {
   align-items: center;
   gap: 20px;
   padding: 50px 50px 50px 0;
+
+  z-index: 1;
+=======
+
 }
 header .container .navigation .next-button {
   width: 18rem;
