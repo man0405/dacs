@@ -162,6 +162,10 @@ document.addEventListener("click", function (e) {
 		) {
 			iconIntro.setAttribute("name", "chevron-up-outline");
 			intro.classList.remove("active");
+			intro.classList.add("hide");
+			setTimeout(() => {
+				intro.classList.remove("hide");
+			}, 1000);
 		}
 	}
 	if (booking.classList.contains("active")) {

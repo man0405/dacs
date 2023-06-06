@@ -17,12 +17,17 @@ main {
 			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 		height: 80vh;
 		padding: 4.6rem 10.2rem;
+		animation: intro-effect 3s infinite;
 
 		transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+		&.hide {
+			animation: hide-intro 1s forwards;
+		}
 		&.active {
-			transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 			overflow-y: scroll;
-			transform: translateY(-90%);
+			animation: show-intro 1s forwards;
+			transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+			// transform: translateY(-90%);
 			.header {
 				button {
 					display: block;
