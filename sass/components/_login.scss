@@ -64,65 +64,78 @@
         margin-top: 5rem;
         background-color: #ffffff;
         color: black;
-        transition: 1s;
+        transition: .5s;
         display: flex;
       }
       .modal-body{
         padding-inline: 30px;
           .modal-input-box{
             position: relative;
-            margin-bottom: 8rem;
             .modal-label{
               position: absolute;
-              bottom: 0;
+              top: 2rem;
               left: 0;
-              transform: translateY(-50%);
+              transform: translateY(-40%);
               pointer-events: none;
-              font-size: 2rem;
+              font-size: 1.5rem;
               transition: all .1s linear;
             }
             .modal-input{
               background-color: transparent;
               height: 100%;
-              padding: 3rem;
+              padding: 1rem 0;
               width: 100%;
               border:none;
               outline: none;
               border: 0px none;
-              padding: 1rem;
               font-size: 2rem;
               border-bottom: 1px solid #ffffff;
+              margin-top: 1rem;
+              margin-bottom: 2rem;
               color:#ffffff;
             }
             .modal-input:focus ~ .modal-label,
             .modal-input:not(:placeholder-shown) ~ .modal-label{
-              padding: 0 2rem;
-              top: -1rem;
+              margin: 0;
+              padding: 0 1em;
+              top: -0.00001px;
             }
         }
-            .modal-button:hover{
-              color:#ffffff;
-              background-color: transparent;
-            }
-            .modal-icon{
-              position: absolute;
-              right: 0;
-              font-style: 1.2em;
-              color: white;
-               
-            }
-          }
+        .modal-button:hover{
+          color:#ffffff;
+          background-color: transparent;
+        }
+        .modal-icon{
+          position: absolute;
+          right: 0;
+          font-style: 1.2em;
+          color: white;
+          margin-top: 1.8rem
         }
       }
+      .modal-footer{
+        height: 70px;
+        display: flex;
+        padding: 0 30px;
+        justify-content: space-between;
+        align-items: center;
+        .modal-button-footer{
+          width: 48%;
+          display: flex;
+          justify-content: space-evenly;
+        }
+        .modal-button-footer:hover{
+          color: #0165E1;
+          background-color: transparent;
+        }
+        .facebook:hover{
+          color: #0165E1;
+        }
+        .instagram:hover{
+          color: #C13584;
+        }
+        }
+      }
+  }
       
-
-
-      /*
-        .modal-login{
-          .modal-container
-            modal-close
-            modal-header
-            modal-body
-            modal-footer
-
-      */ 
+      
