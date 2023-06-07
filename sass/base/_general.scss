@@ -1,5 +1,11 @@
 html {
 	font-size: 62.5%;
+	@include tablet {
+		font-size: 50%;
+	}
+	@include mobile {
+		font-size: 30%;
+	}
 }
 
 body {
@@ -11,7 +17,14 @@ body {
 
 .container {
 	margin: 0 auto;
-	width: 120rem;
+	max-width: 120rem;
+	@include tablet {
+		margin: 0;
+		width: 100vw;
+	}
+	@include mobile {
+		width: 100vw;
+	}
 }
 
 .line-effect {
@@ -48,5 +61,14 @@ body {
 	}
 	to {
 		transform: translateY(-10px);
+	}
+}
+
+@keyframes opacity-effect {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }
