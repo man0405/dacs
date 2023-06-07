@@ -1,5 +1,5 @@
 main {
-	position: relative;
+	// position: relative;
 	position: fixed;
 	bottom: 0;
 	left: 50%;
@@ -16,9 +16,8 @@ main {
 			rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 		height: 80vh;
-		padding: 4.6rem 10.2rem;
+		padding: 2.4rem 4.6rem;
 		animation: intro-effect 3s infinite;
-
 		transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 		&.hide {
 			animation: hide-intro 1s forwards;
@@ -37,40 +36,40 @@ main {
 
 		.header {
 			display: flex;
-			column-gap: calc(50% - 100px);
-			margin-bottom: 12rem;
+			column-gap: calc(50% - 10rem);
+			margin-bottom: 8rem;
 			position: relative;
 			.close {
 				position: absolute;
 				top: 0;
 				left: 0;
-				font-size: 1.6rem;
+				font-size: 1.4rem;
 				display: none;
 			}
 			ion-icon {
-				font-size: 3.4rem;
+				font-size: 2.8rem;
 				margin: 0 auto;
 			}
 		}
 		.body {
 			.name-brand {
-				font-size: 7.2rem;
+				font-size: 5.6rem;
 				font-weight: 600;
 				margin-bottom: 2rem;
 			}
 			.address {
-				font-size: 1.8rem;
+				font-size: 1.6rem;
 				font-weight: 300;
-				margin-bottom: 6rem;
+				margin-bottom: 4rem;
 			}
 			.description {
-				font-size: 2.4rem;
+				font-size: 1.8rem;
 				font-weight: 400;
-				margin-bottom: 14rem;
+				margin-bottom: 8rem;
 			}
 			.gallery {
 				h2 {
-					font-size: 3.6rem;
+					font-size: 2.8rem;
 					margin-bottom: 1.2rem;
 				}
 				.gallery-list {
@@ -78,19 +77,19 @@ main {
 					.gallery-item {
 						margin-bottom: 2.4rem;
 						.name-town {
-							font-size: 2.4rem;
+							font-size: 2rem;
 							margin-bottom: 0.5rem;
 						}
 						.description {
 							margin-bottom: 1rem;
 							.address {
 								margin-bottom: 0.5rem;
-								font-weight: 300;
+								font-weight: 200;
 								font-size: 1.6rem;
 							}
 							.other {
 								margin-bottom: 0.5rem;
-								font-size: 2rem;
+								font-size: 1.8rem;
 								font-weight: 400;
 							}
 						}
@@ -100,16 +99,18 @@ main {
 		}
 		.footer {
 			.partners {
+				// overflow-x: auto;
+				overflow: hidden;
 				margin-bottom: 5rem;
 				.partners-header {
 					font-size: 1, 7rem;
 					color: gray;
-					margin-bottom: 28px;
+					margin-bottom: 2.8rem;
 				}
 				.partners-icon {
 					display: flex;
 					align-items: center;
-					column-gap: 50px;
+					column-gap: 5rem;
 				}
 			}
 			button {
@@ -119,17 +120,30 @@ main {
 	}
 	.booking {
 		position: absolute;
+		@include tablet {
+			bottom: 0;
+		}
+		@include mobile {
+			bottom: 0;
+		}
+		// bottom: 0;
 		background-color: white;
 		box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
 			rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-		padding: 4.6rem 10.2rem;
+		padding: 2.6rem 5.2rem;
 		transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 		&.active {
 			transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 			overflow-y: scroll;
 			// transform: translateY(-800%);
-			transform: translateY(-155vh);
+			transform: translateY(calc(-154vh));
+			@include tablet {
+				transform: translateY(calc(-100% - 2.6rem));
+			}
+			@include mobile {
+				transform: translateY(calc(-70vh - 2.6rem));
+			}
 			.header {
 				button {
 					display: block;
@@ -139,7 +153,7 @@ main {
 
 		.header {
 			display: flex;
-			column-gap: calc(50% - 100px);
+			column-gap: calc(50% - 10rem);
 			margin-bottom: 12rem;
 			position: relative;
 			.close {
@@ -177,9 +191,9 @@ main {
 						input {
 							width: 100%;
 							height: 100%;
-							font-size: 25px;
+							font-size: 2.5rem;
 							border-radius: 1rem;
-							border: 1px solid #545454;
+							border: 0.1rem solid #545454;
 							padding: 2rem;
 							outline: none;
 						}
@@ -205,7 +219,7 @@ main {
 				}
 			}
 			button {
-				border: 1px solid black;
+				border: 0.1rem solid black;
 				&:hover {
 					filter: brightness(80%);
 				}
@@ -221,5 +235,18 @@ main {
 	font-size: 1.6rem;
 	font-weight: 400;
 	padding: 1.8rem 3.8rem;
+	@include tablet {
+		bottom: 10%;
+	}
+	@include mobile {
+		bottom: 13%;
+	}
+	&.active {
+		color: black;
+		border: 1px solid black;
+	}
+	&.hidden {
+		display: none;
+	}
 	// text-align: center;
 }
