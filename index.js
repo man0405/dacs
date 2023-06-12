@@ -183,6 +183,9 @@ document.addEventListener("click", function (e) {
 			btnBooking.classList.remove("hidden");
 		}
 	}
+	if (e.target.matches(".discover-button")) {
+		location.href = "https://app.home-viewer.com/viewer/?xml=golddemoa";
+	}
 });
 
 // menu link
