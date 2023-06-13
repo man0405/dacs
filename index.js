@@ -184,7 +184,7 @@ document.addEventListener("click", function (e) {
 		}
 	}
 	if (e.target.matches(".discover-button")) {
-		location.href = "https://app.home-viewer.com/viewer/?xml=golddemoa";
+		location.href = "./3Dmodels/3dmodel.html";
 	}
 });
 

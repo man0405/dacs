@@ -1,7 +1,10 @@
 :root {
   --text-color: #000;
-  --primary-color: blue;
   --primary-font: "Prompt";
+  --dark-color: #14213d;
+  --primary-color: FCA311;
+  --second-color: #e5e5e5;
+  --light-color: #fffff;
 }
 
 html {
