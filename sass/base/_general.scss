@@ -27,6 +27,13 @@ body {
 	}
 }
 
+.main-container {
+	font-family: var(--secondary-font);
+	margin: 0 auto;
+	max-width: 120rem;
+	padding: 10px;
+}
+
 .line-effect {
 	width: 0;
 	z-index: 2;
