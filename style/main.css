@@ -1,10 +1,13 @@
 :root {
   --text-color: #000;
+  --hover-color: rgb(75, 75, 255);
   --primary-font: "Prompt";
+  --secondary-font: "Roboto", sans-serif;
   --dark-color: #14213d;
   --primary-color: FCA311;
   --second-color: #e5e5e5;
   --light-color: #fffff;
+  --gray1: #333333;
 }
 
 html {
@@ -42,6 +45,13 @@ body {
   .container {
     width: 100vw;
   }
+}
+
+.main-container {
+  font-family: var(--secondary-font);
+  margin: 0 auto;
+  max-width: 120rem;
+  padding: 0 10px;
 }
 
 .line-effect {
@@ -89,6 +99,30 @@ body {
     opacity: 1;
   }
 }
+@keyframes hide {
+  40%, 60% {
+    width: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -120,6 +154,10 @@ h6 {
   font-family: var(--primary-font);
   font-weight: 500;
   line-height: 1.5;
+}
+
+.title {
+  font-family: var(--secondary-font);
 }
 
 .heading {
@@ -164,7 +202,7 @@ button:hover {
   filter: brightness(95%);
 }
 
-.modal-login {
+.modal-login-login {
   z-index: 100;
   font-family: sans-serif;
   color: #ffffff;
@@ -177,11 +215,14 @@ button:hover {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
-.modal-login .modal-container {
+.modal-login-login.active {
+  display: flex;
+}
+.modal-login-login .modal-login-container {
   height: 650px;
   width: 500px;
   border-radius: 2rem;
@@ -191,7 +232,7 @@ button:hover {
   padding: 50px 35px;
   position: relative;
 }
-.modal-login .modal-container .modal-close {
+.modal-login-login .modal-login-container .modal-login-close {
   position: absolute;
   background-color: white;
   right: 0;
@@ -206,20 +247,19 @@ button:hover {
   padding: 2rem;
   cursor: pointer;
 }
-.modal-login .modal-container .modal-close ion-icon {
+.modal-login-login .modal-login-container .modal-login-close ion-icon {
   font-size: 1.8rem;
   color: black;
 }
-.modal-login .modal-container .modal-header {
+.modal-login-login .modal-login-container .modal-login-header {
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3rem;
-  margin-bottom: 4rem;
   background-color: inherit;
 }
-.modal-login .modal-container .modal-button {
+.modal-login-login .modal-login-container .modal-login-button {
   width: 100%;
   height: 7rem;
   display: flex;
@@ -231,69 +271,335 @@ button:hover {
   margin-top: 5rem;
   background-color: #ffffff;
   color: black;
-  transition: 1s;
+  transition: 0.5s;
   display: flex;
 }
-.modal-login .modal-container .modal-body {
+.modal-login-login .modal-login-container .modal-login-body {
   padding-inline: 30px;
 }
-.modal-login .modal-container .modal-body .modal-input-box {
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box {
   position: relative;
-  margin-bottom: 8rem;
 }
-.modal-login .modal-container .modal-body .modal-input-box .modal-label {
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-label {
   position: absolute;
-  bottom: 0;
+  top: 3rem;
   left: 0;
-  transform: translateY(-50%);
+  transform: translateY(-10%);
   pointer-events: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: all 0.1s linear;
 }
-.modal-login .modal-container .modal-body .modal-input-box .modal-input {
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input {
   background-color: transparent;
   height: 100%;
-  padding: 3rem;
+  padding: 1rem 0;
   width: 100%;
   border: none;
   outline: none;
   border: 0px none;
-  padding: 1rem;
   font-size: 2rem;
   border-bottom: 1px solid #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
-.modal-login .modal-container .modal-body .modal-input-box .modal-input:focus ~ .modal-label,
-.modal-login .modal-container .modal-body .modal-input-box .modal-input:not(:placeholder-shown) ~ .modal-label {
-  padding: 0 2rem;
-  top: -1rem;
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input:focus ~ .modal-login-label,
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input:not(:placeholder-shown) ~ .modal-login-label {
+  margin: 0;
+  padding: 0 1em;
+  top: -0.00001px;
 }
-.modal-login .modal-container .modal-body .modal-button:hover {
+.modal-login-login .modal-login-container .modal-login-body .modal-login-button:hover {
   color: #ffffff;
   background-color: transparent;
 }
-.modal-login .modal-container .modal-body .modal-icon {
+.modal-login-login .modal-login-container .modal-login-body .modal-login-icon {
   position: absolute;
   right: 0;
   font-style: 1.2em;
   color: white;
+  margin-top: 3rem;
+}
+.modal-login-login .modal-login-container .modal-login-body .body-footer {
+  margin-top: 3rem;
+}
+.modal-login-login .modal-login-container .modal-login-footer {
+  height: 70px;
+  display: flex;
+  padding: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-login-login .modal-login-container .modal-login-footer .modal-login-button-footer {
+  width: 48%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-login-login .modal-login-container .modal-login-footer .modal-login-button-footer:hover {
+  color: #0165e1;
+  background-color: transparent;
+}
+.modal-login-login .modal-login-container .modal-login-footer .facebook:hover {
+  color: #0165e1;
+}
+.modal-login-login .modal-login-container .modal-login-footer .instagram:hover {
+  color: #c13584;
 }
 
-/*
-  .modal-login{
-    .modal-container
-      modal-close
-      modal-header
-      modal-body
-      modal-footer
+button {
+  background-color: transparent;
+  color: inherit;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  min-height: 5rem;
+  min-width: 10rem;
+}
+button:hover {
+  cursor: pointer;
+}
 
-*/
+button:hover {
+  cursor: pointer;
+}
+
+.btn-border {
+  border: 0.1rem solid white;
+  border-radius: 50px;
+}
+
+.btn-border:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-full:hover {
+  filter: brightness(95%);
+}
+
+.modal-register-login {
+  z-index: 100;
+  font-family: sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal-register-login.active {
+  display: flex;
+}
+.modal-register-login .modal-register-container {
+  height: 650px;
+  width: 500px;
+  border-radius: 2rem;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  position: relative;
+}
+.modal-register-login .modal-register-container .modal-register-close {
+  pointer-events: all;
+  position: absolute;
+  background-color: white;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding: 2rem;
+  cursor: pointer;
+}
+.modal-register-login .modal-register-container .modal-register-close ion-icon {
+  font-size: 1.8rem;
+  color: black;
+  pointer-events: none;
+}
+.modal-register-login .modal-register-container .modal-register-header {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background-color: inherit;
+}
+.modal-register-login .modal-register-container .modal-register-button {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 0.1rem;
+  margin-top: 5rem;
+  background-color: #ffffff;
+  color: black;
+  transition: 0.5s;
+  display: flex;
+}
+.modal-register-login .modal-register-container .modal-register-body {
+  padding-inline: 30px;
+}
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box {
+  position: relative;
+}
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-label {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  transform: translateY(-10%);
+  pointer-events: none;
+  font-size: 1.5rem;
+  transition: all 0.1s linear;
+}
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input {
+  background-color: transparent;
+  height: 100%;
+  padding: 1rem 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  border: 0px none;
+  font-size: 2rem;
+  border-bottom: 1px solid #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input:focus ~ .modal-register-label,
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input:not(:placeholder-shown) ~ .modal-register-label {
+  margin: 0;
+  padding: 0 1em;
+  top: -0.00001px;
+}
+.modal-register-login .modal-register-container .modal-register-body .modal-register-button:hover {
+  color: #ffffff;
+  background-color: transparent;
+}
+.modal-register-login .modal-register-container .modal-register-body .modal-register-icon {
+  position: absolute;
+  right: 0;
+  font-style: 1.2em;
+  color: white;
+  margin-top: 3rem;
+}
+.modal-register-login .modal-register-container .modal-register-body .body-footer {
+  margin-top: 3rem;
+}
+.modal-register-login .modal-register-container .modal-register-footer {
+  height: 70px;
+  display: flex;
+  padding: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-register-login .modal-register-container .modal-register-footer .modal-register-button-footer {
+  width: 48%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-register-login .modal-register-container .modal-register-footer .modal-register-button-footer:hover {
+  color: #0165e1;
+  background-color: transparent;
+}
+.modal-register-login .modal-register-container .modal-register-footer .facebook:hover {
+  color: #0165e1;
+}
+.modal-register-login .modal-register-container .modal-register-footer .instagram:hover {
+  color: #c13584;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo img {
+  width: 7rem;
+  height: 4.2rem;
+  object-fit: contain;
+}
+header .header-navigation {
+  padding-block: 2rem;
+}
+header .header-navigation .list-nav {
+  display: flex;
+  column-gap: 60px;
+}
+header .header-navigation .list-nav .nav-item {
+  position: relative;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--gray1);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+header .header-navigation .list-nav .nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0rem;
+  left: 0;
+  color: var(--hover-color);
+  background-color: var(--hover-color);
+  width: 0;
+  height: 0.2rem;
+  transition: 0.3s;
+}
+header .header-navigation .list-nav .nav-item:hover {
+  color: var(--hover-color);
+}
+header .header-navigation .list-nav .nav-item:hover::before {
+  width: 100%;
+}
+header .header-navigation .list-nav .nav-item.active {
+  border-top: 1px solid var(--gray1);
+  border-bottom: 1px solid var(--gray1);
+}
+header .header-navigation .list-nav .nav-item.active:hover {
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+}
+header .header-navigation .list-nav .nav-item.active:hover::before {
+  width: 0;
+}
+header .user {
+  padding: 1rem;
+  cursor: pointer;
+}
+header .user ion-icon {
+  font-size: 2.4rem;
+}
+
 header {
   overflow: hidden;
   position: relative;
 }
 header .container {
   height: 100vh;
+  width: 120rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
