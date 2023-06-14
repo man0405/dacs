@@ -1,5 +1,195 @@
-main {
+header {
+	// height: 100vh;
+	// width: 100vw;
+	overflow: hidden;
 	position: relative;
+
+	.container {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin: 0 auto;
+		color: #ffff;
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 1rem;
+			// z-index: 3;
+			.logo {
+				width: 15rem;
+				height: 5rem;
+				background-color: red;
+			}
+			ul {
+				display: flex;
+				li {
+					margin-left: 3rem;
+					cursor: pointer;
+					button {
+						font-size: 1.6rem;
+						border: none;
+					}
+				}
+			}
+		}
+		.content {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.introduce {
+				position: relative;
+				width: 40%;
+				height: 50%;
+				// z-index: 2;
+				margin-right: 3rem;
+				.wrapper {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: fit-content;
+					padding: 0 2.5rem 0 5rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					pointer-events: none;
+					&.active {
+						pointer-events: all;
+						span > * {
+							opacity: 1;
+							transform: translateY(0);
+							transition-delay: calc((var(--idx)) * 0.1s);
+						}
+					}
+					span {
+						overflow: hidden;
+						& > * {
+							transition: 0.5s ease;
+							opacity: 0;
+							transform: translateY(30rem);
+							transition-delay: calc((3 - var(--idx)) * 0.1s);
+						}
+						.address {
+							font-size: 2.4rem;
+							font-weight: 500;
+						}
+						.name {
+							font-size: 5.5rem;
+							font-weight: 500;
+							text-transform: uppercase;
+							line-height: 1.1;
+							letter-spacing: 0.1rem;
+							margin-top: 1rem;
+						}
+						.description {
+							font-size: 1.6rem;
+							margin-top: 0.8rem;
+							font-weight: 400;
+						}
+						.discover-button {
+							width: 25rem;
+							height: 5rem;
+							border-radius: 50px;
+							margin-top: 2rem;
+							transition: 0.5s ease;
+						}
+					}
+				}
+			}
+			.thumbnail-list {
+				height: 30rem;
+				flex: 1;
+				.wrapper {
+					// z-index: 1;
+					height: 30rem;
+					.thumbnail {
+						position: absolute;
+						height: 30rem;
+						width: 20rem;
+						border-radius: 15px;
+						overflow: hidden;
+						transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+						transform: translateX(calc(var(--idx) * 23rem));
+						box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+						&.zoom {
+							@media (min-width: 1200px) {
+								transform: translate(
+									calc(((100vw - 20rem - 4rem) / -2) - 3rem),
+									calc(((-100vh + 30rem + 10rem) / 2))
+								);
+							}
+							z-index: -1;
+							border-radius: 0;
+							width: 100vw;
+							height: 100vh;
+							/* transform: translate(calc(100vw / -3 * 1.2), calc(100vh / -4 * 0.28)); */
+							transform: translate(
+								calc(100vw * -0.4 - 3rem),
+								calc(((-100vh + 30rem + 10rem) / 2))
+							);
+							// position: absolute;
+							// left: 50vw;
+							// top: 50vh;
+							// transform: translate(-50%, -50%);
+							// transition-delay: 0.1s;
+							// animation: opacity-effect 1s ease;
+							filter: brightness(40%);
+							box-shadow: none;
+						}
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
+			}
+		}
+		.navigation {
+			margin-left: 40%;
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+			padding: 5rem 5rem 5rem 0;
+			// z-index: 2;
+			.next-button {
+				width: 18rem;
+				border-radius: 50px;
+			}
+			.line {
+				flex: 1;
+				height: 0.2rem;
+				background-color: #fff;
+			}
+			.ordinal-number {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 5rem;
+				height: 5rem;
+				overflow: hidden;
+				h2 {
+					font-size: 3.5rem;
+					font-weight: 400;
+					line-height: 1;
+					position: absolute;
+					transform: translateY(200%);
+					transition: 0.5s ease;
+				}
+				h2.active {
+					transform: unset;
+				}
+			}
+		}
+	}
+}
+
+main {
+	// position: relative;
 	position: fixed;
 	bottom: 0;
 	left: 50%;
@@ -16,13 +206,17 @@ main {
 			rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 		height: 80vh;
-		padding: 4.6rem 10.2rem;
-
+		padding: 2.4rem 4.6rem;
+		animation: intro-effect 3s infinite;
 		transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+		&.hide {
+			animation: hide-intro 1s forwards;
+		}
 		&.active {
-			transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 			overflow-y: scroll;
-			transform: translateY(-90%);
+			animation: show-intro 1s forwards;
+			transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+			// transform: translateY(-90%);
 			.header {
 				button {
 					display: block;
@@ -32,40 +226,40 @@ main {
 
 		.header {
 			display: flex;
-			column-gap: calc(50% - 100px);
-			margin-bottom: 12rem;
+			column-gap: calc(50% - 10rem);
+			margin-bottom: 8rem;
 			position: relative;
 			.close {
 				position: absolute;
 				top: 0;
 				left: 0;
-				font-size: 1.6rem;
+				font-size: 1.4rem;
 				display: none;
 			}
 			ion-icon {
-				font-size: 3.4rem;
+				font-size: 2.8rem;
 				margin: 0 auto;
 			}
 		}
 		.body {
 			.name-brand {
-				font-size: 7.2rem;
+				font-size: 5.6rem;
 				font-weight: 600;
 				margin-bottom: 2rem;
 			}
 			.address {
-				font-size: 1.8rem;
+				font-size: 1.6rem;
 				font-weight: 300;
-				margin-bottom: 6rem;
+				margin-bottom: 4rem;
 			}
 			.description {
-				font-size: 2.4rem;
+				font-size: 1.8rem;
 				font-weight: 400;
-				margin-bottom: 14rem;
+				margin-bottom: 8rem;
 			}
 			.gallery {
 				h2 {
-					font-size: 3.6rem;
+					font-size: 2.8rem;
 					margin-bottom: 1.2rem;
 				}
 				.gallery-list {
@@ -73,19 +267,19 @@ main {
 					.gallery-item {
 						margin-bottom: 2.4rem;
 						.name-town {
-							font-size: 2.4rem;
+							font-size: 2rem;
 							margin-bottom: 0.5rem;
 						}
 						.description {
 							margin-bottom: 1rem;
 							.address {
 								margin-bottom: 0.5rem;
-								font-weight: 300;
+								font-weight: 200;
 								font-size: 1.6rem;
 							}
 							.other {
 								margin-bottom: 0.5rem;
-								font-size: 2rem;
+								font-size: 1.8rem;
 								font-weight: 400;
 							}
 						}
@@ -95,16 +289,18 @@ main {
 		}
 		.footer {
 			.partners {
+				// overflow-x: auto;
+				overflow: hidden;
 				margin-bottom: 5rem;
 				.partners-header {
 					font-size: 1, 7rem;
 					color: gray;
-					margin-bottom: 28px;
+					margin-bottom: 2.8rem;
 				}
 				.partners-icon {
 					display: flex;
 					align-items: center;
-					column-gap: 50px;
+					column-gap: 5rem;
 				}
 			}
 			button {
@@ -114,17 +310,30 @@ main {
 	}
 	.booking {
 		position: absolute;
+		@include tablet {
+			bottom: 0;
+		}
+		@include mobile {
+			bottom: 0;
+		}
+		// bottom: 0;
 		background-color: white;
 		box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
 			rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-		padding: 4.6rem 10.2rem;
+		padding: 2.6rem 5.2rem;
 		transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 		&.active {
 			transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 			overflow-y: scroll;
 			// transform: translateY(-800%);
-			transform: translateY(-155vh);
+			transform: translateY(calc(-154vh));
+			@include tablet {
+				transform: translateY(calc(-100% - 2.6rem));
+			}
+			@include mobile {
+				transform: translateY(calc(-70vh - 2.6rem));
+			}
 			.header {
 				button {
 					display: block;
@@ -134,7 +343,7 @@ main {
 
 		.header {
 			display: flex;
-			column-gap: calc(50% - 100px);
+			column-gap: calc(50% - 10rem);
 			margin-bottom: 12rem;
 			position: relative;
 			.close {
@@ -172,9 +381,9 @@ main {
 						input {
 							width: 100%;
 							height: 100%;
-							font-size: 25px;
+							font-size: 2.5rem;
 							border-radius: 1rem;
-							border: 1px solid #545454;
+							border: 0.1rem solid #545454;
 							padding: 2rem;
 							outline: none;
 						}
@@ -200,7 +409,7 @@ main {
 				}
 			}
 			button {
-				border: 1px solid black;
+				border: 0.1rem solid black;
 				&:hover {
 					filter: brightness(80%);
 				}
@@ -216,5 +425,18 @@ main {
 	font-size: 1.6rem;
 	font-weight: 400;
 	padding: 1.8rem 3.8rem;
+	@include tablet {
+		bottom: 10%;
+	}
+	@include mobile {
+		bottom: 13%;
+	}
+	&.active {
+		color: black;
+		border: 1px solid black;
+	}
+	&.hidden {
+		display: none;
+	}
 	// text-align: center;
 }

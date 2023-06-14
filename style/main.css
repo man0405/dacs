@@ -1,11 +1,24 @@
 :root {
   --text-color: #000;
-  --primary-color: blue;
   --primary-font: "Prompt";
+  --dark-color: #14213d;
+  --primary-color: FCA311;
+  --second-color: #e5e5e5;
+  --light-color: #fffff;
 }
 
 html {
   font-size: 62.5%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 479px) {
+  html {
+    font-size: 30%;
+  }
 }
 
 body {
@@ -17,16 +30,18 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 120rem;
+  max-width: 120rem;
 }
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.75);
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    margin: 0;
+    width: 100vw;
+  }
+}
+@media (max-width: 479px) {
+  .container {
+    width: 100vw;
+  }
 }
 
 .line-effect {
@@ -39,6 +54,41 @@ body {
   transition: all 0.25s linear;
 }
 
+@keyframes intro-effect {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes show-intro {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-90%);
+  }
+}
+@keyframes hide-intro {
+  from {
+    transform: translateY(-90%);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+@keyframes opacity-effect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -85,7 +135,7 @@ button {
   font-size: 1.4rem;
   font-weight: 500;
   text-transform: uppercase;
-  min-height: 50px;
+  min-height: 5rem;
   min-width: 10rem;
 }
 button:hover {
@@ -97,7 +147,7 @@ button:hover {
 }
 
 .btn-border {
-  border: 1px solid white;
+  border: 0.1rem solid white;
   border-radius: 50px;
 }
 
@@ -261,7 +311,7 @@ button {
   font-size: 1.4rem;
   font-weight: 500;
   text-transform: uppercase;
-  min-height: 50px;
+  min-height: 5rem;
   min-width: 10rem;
 }
 button:hover {
@@ -273,7 +323,7 @@ button:hover {
 }
 
 .btn-border {
-  border: 1px solid white;
+  border: 0.1rem solid white;
   border-radius: 50px;
 }
 
@@ -447,7 +497,7 @@ header .container nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 1rem;
 }
 header .container nav .logo {
   width: 15rem;
@@ -458,7 +508,7 @@ header .container nav ul {
   display: flex;
 }
 header .container nav ul li {
-  margin-left: 30px;
+  margin-left: 3rem;
   cursor: pointer;
 }
 header .container nav ul li button {
@@ -475,7 +525,7 @@ header .container .content .introduce {
   position: relative;
   width: 40%;
   height: 50%;
-  margin-right: 30px;
+  margin-right: 3rem;
 }
 header .container .content .introduce .wrapper {
   position: absolute;
@@ -483,7 +533,7 @@ header .container .content .introduce .wrapper {
   left: 0;
   width: 100%;
   height: fit-content;
-  padding: 0 25px 0 50px;
+  padding: 0 2.5rem 0 5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -503,7 +553,7 @@ header .container .content .introduce .wrapper span {
 header .container .content .introduce .wrapper span > * {
   transition: 0.5s ease;
   opacity: 0;
-  transform: translateY(300px);
+  transform: translateY(30rem);
   transition-delay: calc((3 - var(--idx)) * 0.1s);
 }
 header .container .content .introduce .wrapper span .address {
@@ -515,7 +565,7 @@ header .container .content .introduce .wrapper span .name {
   font-weight: 500;
   text-transform: uppercase;
   line-height: 1.1;
-  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
   margin-top: 1rem;
 }
 header .container .content .introduce .wrapper span .description {
@@ -553,9 +603,14 @@ header .container .content .thumbnail-list .wrapper .thumbnail.zoom {
   width: 100vw;
   height: 100vh;
   /* transform: translate(calc(100vw / -3 * 1.2), calc(100vh / -4 * 0.28)); */
-  transform: translate(calc((100vw - 200px - 40px) / -2 - 30px), calc((-100vh + 300px + 100px) / 2));
+  transform: translate(calc(-40vw - 3rem), calc((-100vh + 30rem + 10rem) / 2));
   filter: brightness(40%);
   box-shadow: none;
+}
+@media (min-width: 1200px) {
+  header .container .content .thumbnail-list .wrapper .thumbnail.zoom {
+    transform: translate(calc((100vw - 20rem - 4rem) / -2 - 3rem), calc((-100vh + 30rem + 10rem) / 2));
+  }
 }
 header .container .content .thumbnail-list .wrapper .thumbnail img {
   width: 100%;
@@ -566,8 +621,8 @@ header .container .navigation {
   margin-left: 40%;
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 50px 50px 50px 0;
+  gap: 2rem;
+  padding: 5rem 5rem 5rem 0;
 }
 header .container .navigation .next-button {
   width: 18rem;
@@ -575,7 +630,7 @@ header .container .navigation .next-button {
 }
 header .container .navigation .line {
   flex: 1;
-  height: 2px;
+  height: 0.2rem;
   background-color: #fff;
 }
 header .container .navigation .ordinal-number {
@@ -583,8 +638,8 @@ header .container .navigation .ordinal-number {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   overflow: hidden;
 }
 header .container .navigation .ordinal-number h2 {
@@ -600,7 +655,6 @@ header .container .navigation .ordinal-number h2.active {
 }
 
 main {
-  position: relative;
   position: fixed;
   bottom: 0;
   left: 50%;
@@ -612,51 +666,55 @@ main .intro {
   background-color: white;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   height: 80vh;
-  padding: 4.6rem 10.2rem;
+  padding: 2.4rem 4.6rem;
+  animation: intro-effect 3s infinite;
   transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 }
+main .intro.hide {
+  animation: hide-intro 1s forwards;
+}
 main .intro.active {
-  transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
   overflow-y: scroll;
-  transform: translateY(-90%);
+  animation: show-intro 1s forwards;
+  transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
 }
 main .intro.active .header button {
   display: block;
 }
 main .intro .header {
   display: flex;
-  column-gap: calc(50% - 100px);
-  margin-bottom: 12rem;
+  column-gap: calc(50% - 10rem);
+  margin-bottom: 8rem;
   position: relative;
 }
 main .intro .header .close {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   display: none;
 }
 main .intro .header ion-icon {
-  font-size: 3.4rem;
+  font-size: 2.8rem;
   margin: 0 auto;
 }
 main .intro .body .name-brand {
-  font-size: 7.2rem;
+  font-size: 5.6rem;
   font-weight: 600;
   margin-bottom: 2rem;
 }
 main .intro .body .address {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 300;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 main .intro .body .description {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 400;
-  margin-bottom: 14rem;
+  margin-bottom: 8rem;
 }
 main .intro .body .gallery h2 {
-  font-size: 3.6rem;
+  font-size: 2.8rem;
   margin-bottom: 1.2rem;
 }
 main .intro .body .gallery .gallery-list {
@@ -666,7 +724,7 @@ main .intro .body .gallery .gallery-list .gallery-item {
   margin-bottom: 2.4rem;
 }
 main .intro .body .gallery .gallery-list .gallery-item .name-town {
-  font-size: 2.4rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 main .intro .body .gallery .gallery-list .gallery-item .description {
@@ -674,26 +732,27 @@ main .intro .body .gallery .gallery-list .gallery-item .description {
 }
 main .intro .body .gallery .gallery-list .gallery-item .description .address {
   margin-bottom: 0.5rem;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 1.6rem;
 }
 main .intro .body .gallery .gallery-list .gallery-item .description .other {
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
 }
 main .intro .footer .partners {
+  overflow: hidden;
   margin-bottom: 5rem;
 }
 main .intro .footer .partners .partners-header {
   font-size: 1, 7rem;
   color: gray;
-  margin-bottom: 28px;
+  margin-bottom: 2.8rem;
 }
 main .intro .footer .partners .partners-icon {
   display: flex;
   align-items: center;
-  column-gap: 50px;
+  column-gap: 5rem;
 }
 main .intro .footer button {
   background-color: #dadada;
@@ -702,20 +761,40 @@ main .booking {
   position: absolute;
   background-color: white;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  padding: 4.6rem 10.2rem;
+  padding: 2.6rem 5.2rem;
   transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  main .booking {
+    bottom: 0;
+  }
+}
+@media (max-width: 479px) {
+  main .booking {
+    bottom: 0;
+  }
 }
 main .booking.active {
   transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
   overflow-y: scroll;
-  transform: translateY(-155vh);
+  transform: translateY(-154vh);
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  main .booking.active {
+    transform: translateY(calc(-100% - 2.6rem));
+  }
+}
+@media (max-width: 479px) {
+  main .booking.active {
+    transform: translateY(calc(-70vh - 2.6rem));
+  }
 }
 main .booking.active .header button {
   display: block;
 }
 main .booking .header {
   display: flex;
-  column-gap: calc(50% - 100px);
+  column-gap: calc(50% - 10rem);
   margin-bottom: 12rem;
   position: relative;
 }
@@ -755,9 +834,9 @@ main .booking .body form .list-input .box {
 main .booking .body form .list-input .box input {
   width: 100%;
   height: 100%;
-  font-size: 25px;
+  font-size: 2.5rem;
   border-radius: 1rem;
-  border: 1px solid #545454;
+  border: 0.1rem solid #545454;
   padding: 2rem;
   outline: none;
 }
@@ -780,7 +859,7 @@ main .booking .body form .list-input .box input:not(:placeholder-shown) ~ label 
   padding: 0 1rem;
 }
 main .booking .body button {
-  border: 1px solid black;
+  border: 0.1rem solid black;
 }
 main .booking .body button:hover {
   filter: brightness(80%);
@@ -794,6 +873,23 @@ main .booking .body button:hover {
   font-size: 1.6rem;
   font-weight: 400;
   padding: 1.8rem 3.8rem;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .btn-private {
+    bottom: 10%;
+  }
+}
+@media (max-width: 479px) {
+  .btn-private {
+    bottom: 13%;
+  }
+}
+.btn-private.active {
+  color: black;
+  border: 1px solid black;
+}
+.btn-private.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

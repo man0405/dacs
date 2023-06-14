@@ -1,5 +1,11 @@
 html {
 	font-size: 62.5%;
+	@include tablet {
+		font-size: 50%;
+	}
+	@include mobile {
+		font-size: 30%;
+	}
 }
 
 body {
@@ -11,17 +17,14 @@ body {
 
 .container {
 	margin: 0 auto;
-	width: 120rem;
-}
-
-.backdrop {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-
-	background: rgba(0, 0, 0, 0.75);
+	max-width: 120rem;
+	@include tablet {
+		margin: 0;
+		width: 100vw;
+	}
+	@include mobile {
+		width: 100vw;
+	}
 }
 
 .line-effect {
@@ -32,4 +35,40 @@ body {
 	position: fixed;
 	pointer-events: none;
 	transition: all 0.25s linear;
+}
+@keyframes intro-effect {
+	0% {
+		transform: translateY(-10px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(-10px);
+	}
+}
+@keyframes show-intro {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-90%);
+	}
+}
+@keyframes hide-intro {
+	from {
+		transform: translateY(-90%);
+	}
+	to {
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes opacity-effect {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

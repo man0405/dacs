@@ -129,6 +129,7 @@ const iconIntro = h.children[1];
 console.log(iconIntro);
 intro.addEventListener("click", (e) => {
 	if (!h.matches(".close")) {
+		btnBooking.classList.add("active");
 		iconIntro.setAttribute("name", "chevron-down-outline");
 		intro.classList.add("active");
 	}
@@ -142,9 +143,11 @@ const btnBooking1 = document.querySelector(".btn-private-1");
 
 btnBooking.addEventListener("click", (e) => {
 	showBooking();
+	btnBooking.classList.add("hidden");
 });
 btnBooking1.addEventListener("click", (e) => {
 	showBooking();
+	btnBooking.classList.add("hidden");
 });
 function showBooking() {
 	if (!booking.classList.contains("active")) {
@@ -162,6 +165,11 @@ document.addEventListener("click", function (e) {
 		) {
 			iconIntro.setAttribute("name", "chevron-up-outline");
 			intro.classList.remove("active");
+			intro.classList.add("hide");
+			setTimeout(() => {
+				btnBooking.classList.remove("active");
+				intro.classList.remove("hide");
+			}, 1000);
 		}
 	}
 	if (booking.classList.contains("active")) {
@@ -172,7 +180,11 @@ document.addEventListener("click", function (e) {
 		) {
 			arrowIcon.setAttribute("name", "chevron-down-outline");
 			booking.classList.remove("active");
+			btnBooking.classList.remove("hidden");
 		}
+	}
+	if (e.target.matches(".discover-button")) {
+		location.href = "./3Dmodels/3dmodel.html";
 	}
 });
 

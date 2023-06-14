@@ -1,0 +1,59 @@
+:root {
+  --text-color: #000;
+  --primary-font: "Prompt";
+  --dark-color: #14213d;
+  --primary-color: FCA311;
+  --second-color: #e5e5e5;
+  --light-color: #fffff;
+}
+
+:root {
+  --text-color: #000;
+  --primary-font: "Prompt";
+  --dark-color: #14213d;
+  --primary-color: FCA311;
+  --second-color: #e5e5e5;
+  --light-color: #fffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 7.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=multipage.css.map */
