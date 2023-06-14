@@ -114,7 +114,183 @@ button:hover {
   filter: brightness(95%);
 }
 
-.modal-login {
+.modal-login-login {
+  z-index: 100;
+  font-family: sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.modal-login-login .modal-login-container {
+  height: 650px;
+  width: 500px;
+  border-radius: 2rem;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  position: relative;
+}
+.modal-login-login .modal-login-container .modal-login-close {
+  position: absolute;
+  background-color: white;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding: 2rem;
+  cursor: pointer;
+}
+.modal-login-login .modal-login-container .modal-login-close ion-icon {
+  font-size: 1.8rem;
+  color: black;
+}
+.modal-login-login .modal-login-container .modal-login-header {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background-color: inherit;
+}
+.modal-login-login .modal-login-container .modal-login-button {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 0.1rem;
+  margin-top: 5rem;
+  background-color: #ffffff;
+  color: black;
+  transition: 0.5s;
+  display: flex;
+}
+.modal-login-login .modal-login-container .modal-login-body {
+  padding-inline: 30px;
+}
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box {
+  position: relative;
+}
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-label {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  transform: translateY(-10%);
+  pointer-events: none;
+  font-size: 1.5rem;
+  transition: all 0.1s linear;
+}
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input {
+  background-color: transparent;
+  height: 100%;
+  padding: 1rem 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  border: 0px none;
+  font-size: 2rem;
+  border-bottom: 1px solid #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input:focus ~ .modal-login-label,
+.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input:not(:placeholder-shown) ~ .modal-login-label {
+  margin: 0;
+  padding: 0 1em;
+  top: -0.00001px;
+}
+.modal-login-login .modal-login-container .modal-login-body .modal-login-button:hover {
+  color: #ffffff;
+  background-color: transparent;
+}
+.modal-login-login .modal-login-container .modal-login-body .modal-login-icon {
+  position: absolute;
+  right: 0;
+  font-style: 1.2em;
+  color: white;
+  margin-top: 3rem;
+}
+.modal-login-login .modal-login-container .modal-login-body .body-footer {
+  margin-top: 3rem;
+}
+.modal-login-login .modal-login-container .modal-login-footer {
+  height: 70px;
+  display: flex;
+  padding: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-login-login .modal-login-container .modal-login-footer .modal-login-button-footer {
+  width: 48%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-login-login .modal-login-container .modal-login-footer .modal-login-button-footer:hover {
+  color: #0165E1;
+  background-color: transparent;
+}
+.modal-login-login .modal-login-container .modal-login-footer .facebook:hover {
+  color: #0165E1;
+}
+.modal-login-login .modal-login-container .modal-login-footer .instagram:hover {
+  color: #C13584;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  min-height: 50px;
+  min-width: 10rem;
+}
+button:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn-border {
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+.btn-border:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-full:hover {
+  filter: brightness(95%);
+}
+
+.modal-register-login {
   z-index: 100;
   font-family: sans-serif;
   color: #ffffff;
@@ -131,7 +307,7 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
-.modal-login .modal-container {
+.modal-register-login .modal-register-container {
   height: 650px;
   width: 500px;
   border-radius: 2rem;
@@ -141,7 +317,7 @@ button:hover {
   padding: 50px 35px;
   position: relative;
 }
-.modal-login .modal-container .modal-close {
+.modal-register-login .modal-register-container .modal-register-close {
   position: absolute;
   background-color: white;
   right: 0;
@@ -156,20 +332,19 @@ button:hover {
   padding: 2rem;
   cursor: pointer;
 }
-.modal-login .modal-container .modal-close ion-icon {
+.modal-register-login .modal-register-container .modal-register-close ion-icon {
   font-size: 1.8rem;
   color: black;
 }
-.modal-login .modal-container .modal-header {
+.modal-register-login .modal-register-container .modal-register-header {
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3rem;
-  margin-bottom: 4rem;
   background-color: inherit;
 }
-.modal-login .modal-container .modal-button {
+.modal-register-login .modal-register-container .modal-register-button {
   width: 100%;
   height: 7rem;
   display: flex;
@@ -184,22 +359,22 @@ button:hover {
   transition: 0.5s;
   display: flex;
 }
-.modal-login .modal-container .modal-body {
+.modal-register-login .modal-register-container .modal-register-body {
   padding-inline: 30px;
 }
-.modal-login .modal-container .modal-body .modal-input-box {
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box {
   position: relative;
 }
-.modal-login .modal-container .modal-body .modal-input-box .modal-label {
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-label {
   position: absolute;
-  top: 2rem;
+  top: 3rem;
   left: 0;
-  transform: translateY(-40%);
+  transform: translateY(-10%);
   pointer-events: none;
   font-size: 1.5rem;
   transition: all 0.1s linear;
 }
-.modal-login .modal-container .modal-body .modal-input-box .modal-input {
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input {
   background-color: transparent;
   height: 100%;
   padding: 1rem 0;
@@ -209,47 +384,50 @@ button:hover {
   border: 0px none;
   font-size: 2rem;
   border-bottom: 1px solid #ffffff;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
-.modal-login .modal-container .modal-body .modal-input-box .modal-input:focus ~ .modal-label,
-.modal-login .modal-container .modal-body .modal-input-box .modal-input:not(:placeholder-shown) ~ .modal-label {
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input:focus ~ .modal-register-label,
+.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input:not(:placeholder-shown) ~ .modal-register-label {
   margin: 0;
   padding: 0 1em;
   top: -0.00001px;
 }
-.modal-login .modal-container .modal-body .modal-button:hover {
+.modal-register-login .modal-register-container .modal-register-body .modal-register-button:hover {
   color: #ffffff;
   background-color: transparent;
 }
-.modal-login .modal-container .modal-body .modal-icon {
+.modal-register-login .modal-register-container .modal-register-body .modal-register-icon {
   position: absolute;
   right: 0;
   font-style: 1.2em;
   color: white;
-  margin-top: 1.8rem;
+  margin-top: 3rem;
 }
-.modal-login .modal-container .modal-footer {
+.modal-register-login .modal-register-container .modal-register-body .body-footer {
+  margin-top: 3rem;
+}
+.modal-register-login .modal-register-container .modal-register-footer {
   height: 70px;
   display: flex;
   padding: 0 30px;
   justify-content: space-between;
   align-items: center;
 }
-.modal-login .modal-container .modal-footer .modal-button-footer {
+.modal-register-login .modal-register-container .modal-register-footer .modal-register-button-footer {
   width: 48%;
   display: flex;
   justify-content: space-evenly;
 }
-.modal-login .modal-container .modal-footer .modal-button-footer:hover {
+.modal-register-login .modal-register-container .modal-register-footer .modal-register-button-footer:hover {
   color: #0165E1;
   background-color: transparent;
 }
-.modal-login .modal-container .modal-footer .facebook:hover {
+.modal-register-login .modal-register-container .modal-register-footer .facebook:hover {
   color: #0165E1;
 }
-.modal-login .modal-container .modal-footer .instagram:hover {
+.modal-register-login .modal-register-container .modal-register-footer .instagram:hover {
   color: #C13584;
 }
 
