@@ -1,7 +1,8 @@
 :root {
 	--text-color: #000;
-	// --primary-color: blue;
+	--hover-color: rgb(75, 75, 255);
 	--primary-font: "Prompt";
+	--secondary-font: "Roboto", sans-serif;
 
 	// Page
 
@@ -9,4 +10,5 @@
 	--primary-color: FCA311;
 	--second-color: #e5e5e5;
 	--light-color: #fffff;
+	--gray1: #333333;
 }
