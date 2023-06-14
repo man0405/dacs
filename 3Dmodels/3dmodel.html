@@ -4,14 +4,51 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+		></script>
 		<style>
 			* {
 				margin: 0;
 				padding: 0;
 			}
+
+			.controls {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1000;
+				width: 50px;
+				height: 50px;
+				background-color: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+			}
+			ion-icon {
+				color: white;
+				pointer-events: none;
+				font-size: 24px;
+			}
 		</style>
 	</head>
 	<body>
+		<div class="controls">
+			<ion-icon name="chevron-back-outline"></ion-icon>
+		</div>
+		<script>
+			const back = document.querySelector(".controls");
+			back.addEventListener("click", function () {
+				console.log("dhawjk");
+				location.href = "../index.html";
+			});
+		</script>
 		<script
 			type="module"
 			src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
@@ -24,6 +61,7 @@
 			src="./models/project-name-5-house-scene/source/Project_Name.glb"
 			shadow-intensity="1"
 			style="width: 100vw; height: 100vh"
-		></model-viewer>
+		>
+		</model-viewer>
 	</body>
 </html>
