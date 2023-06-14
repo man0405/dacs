@@ -21,6 +21,10 @@ h6 {
   line-height: 1.5;
 }
 
+.title {
+  font-family: var(--secondary-font);
+}
+
 .heading {
   text-transform: uppercase;
   font-size: 7.2rem;
@@ -69,7 +73,7 @@ body {
   font-family: var(--secondary-font);
   margin: 0 auto;
   max-width: 120rem;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .line-effect {
@@ -117,6 +121,30 @@ body {
     opacity: 1;
   }
 }
+@keyframes hide {
+  40%, 60% {
+    width: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
 header {
   display: flex;
   align-items: center;
@@ -128,7 +156,7 @@ header .logo img {
   object-fit: contain;
 }
 header .header-navigation {
-  padding-block: 3rem;
+  padding-block: 2rem;
 }
 header .header-navigation .list-nav {
   display: flex;
@@ -181,6 +209,64 @@ header .user {
 }
 header .user ion-icon {
   font-size: 2.4rem;
+}
+
+main {
+  position: relative;
+}
+main .main {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 80vh;
+}
+main .main .overlay {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.7301514356) 0%, rgba(0, 212, 255, 0) 100%);
+}
+main .main .img-banner img {
+  width: 100vw;
+  height: 80vh;
+  object-fit: cover;
+}
+main .main .content {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+main .main .content .title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-block: 1rem;
+}
+main .main .content .description-banner {
+  width: fit-content;
+  display: inline-block;
+}
+main .main .content .description-banner span {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 150%;
+  position: relative;
+  width: fit-content;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 4s steps(44), blink-caret 500ms steps(44) infinite;
+}
+main .main .content .description-banner span.active {
+  animation: hide 4s steps(44), blink-caret 500ms steps(44) infinite;
 }
 
 * {
