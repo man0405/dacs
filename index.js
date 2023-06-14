@@ -156,6 +156,46 @@ function showBooking() {
 	}
 }
 
+// menu link
+const links = [...document.querySelectorAll(".menu-link")];
+const line = document.createElement("div");
+const menu = document.querySelector(".nav");
+line.className = "line-effect";
+document.body.appendChild(line);
+links.forEach((item) => {
+	item.addEventListener("mouseenter", (e) => {
+		const { top, left, width, height } = e.target.getBoundingClientRect();
+		const offsetBottom = 5;
+		line.style.top = `${top + height + offsetBottom}px`;
+		line.style.left = `${left}px`;
+		line.style.width = `${width}px`;
+	});
+});
+menu.addEventListener("mouseleave", () => {
+	line.style.width = 0;
+});
+
+const registerLoginModel = document.querySelector(".modal-register-login");
+const closeRegister = registerLoginModel.querySelector(".modal-register-close");
+const loginModel = document.querySelector(".modal-login-login");
+const closeLogin = loginModel.querySelector(".modal-login-close");
+
+const signUp = document.querySelector(".sign-up");
+const signIn = document.querySelector(".sign-in");
+signUp.addEventListener("click", () => {
+	registerLoginModel.classList.add("active");
+});
+signIn.addEventListener("click", () => {
+	loginModel.classList.add("active");
+});
+
+closeRegister.addEventListener("click", () => {
+	registerLoginModel.classList.remove("active");
+});
+closeLogin.addEventListener("click", () => {
+	loginModel.classList.remove("active");
+});
+
 document.addEventListener("click", function (e) {
 	if (intro.classList.contains("active")) {
 		if (
@@ -186,23 +226,25 @@ document.addEventListener("click", function (e) {
 	if (e.target.matches(".discover-button")) {
 		location.href = "./3Dmodels/3dmodel.html";
 	}
+	if (loginModel.classList.contains("active")) {
+		if (
+			e.target.matches(".modal-login-login") &&
+			!e.target.matches(".modal-login-container")
+		) {
+			loginModel.classList.remove("active");
+		}
+	}
+	if (registerLoginModel.classList.contains("active")) {
+		if (
+			e.target.matches(".modal-register-login") &&
+			!e.target.matches(".modal-register-container")
+		) {
+			registerLoginModel.classList.remove("active");
+		}
+	}
 });
 
-// menu link
-const links = [...document.querySelectorAll(".menu-link")];
-const line = document.createElement("div");
-const menu = document.querySelector(".nav");
-line.className = "line-effect";
-document.body.appendChild(line);
-links.forEach((item) => {
-	item.addEventListener("mouseenter", (e) => {
-		const { top, left, width, height } = e.target.getBoundingClientRect();
-		const offsetBottom = 5;
-		line.style.top = `${top + height + offsetBottom}px`;
-		line.style.left = `${left}px`;
-		line.style.width = `${width}px`;
-	});
-});
-menu.addEventListener("mouseleave", () => {
-	line.style.width = 0;
+const btnLogin = document.querySelector(".modal-login-button");
+btnLogin.addEventListener("click", () => {
+	location.href = "./main.html";
 });
