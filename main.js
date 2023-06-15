@@ -16,7 +16,7 @@ function traverseText() {
 			index++;
 			setTimeout(addLetter, 50);
 		} else {
-			setTimeout(deleteLetter, 1000);
+			setTimeout(deleteLetter, 1500);
 		}
 	}
 
@@ -27,11 +27,10 @@ function traverseText() {
 			setTimeout(deleteLetter, 50);
 		} else {
 			currentIndex = (currentIndex + 1) % textDescription.length;
-			setTimeout(traverseText, 1000);
+			setTimeout(traverseText, 1500);
 		}
 	}
 
 	addLetter();
 }
-
 traverseText();

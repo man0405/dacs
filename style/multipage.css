@@ -215,7 +215,7 @@ main {
   position: relative;
 }
 main .main {
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
@@ -252,7 +252,7 @@ main .main .content .description-banner {
 }
 main .main .content .description-banner span {
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 150%;
   position: absolute;
@@ -265,6 +265,10 @@ main .main .content .description-banner span {
   white-space: nowrap;
   overflow: hidden;
   animation: blink-caret 500ms steps(44) infinite;
+}
+main .slogan .slogan-item .slogan-image img {
+  width: 22px;
+  height: 22px;
 }
 
 * {
