@@ -34,3 +34,37 @@ function traverseText() {
 	addLetter();
 }
 traverseText();
+
+const projectList = document.querySelector(".project-list");
+const project = projectList.querySelectorAll(".project");
+
+let gridTemplateColumns;
+
+function createFractionUnit(index) {
+	gridTemplateColumns = "grid-template-columns:";
+	const units = ["1fr ", "1fr ", "1fr ", "1fr "];
+	units[index] = "3fr ";
+	units.forEach((item) => {
+		gridTemplateColumns += item;
+	});
+}
+
+project.forEach((item) =>
+	item.addEventListener("mouseenter", (e) => {
+		project.forEach((item) => item.classList.remove("show"));
+		projectList.style = "grid-template-columns: 1fr 1fr 1fr 1fr";
+		const id = e.target.dataset.id;
+		projectList.children[id - 1].classList.add("show");
+		createFractionUnit(id - 1);
+		projectList.style = gridTemplateColumns;
+		console.log(gridTemplateColumns);
+	})
+);
+
+project.forEach((item) =>
+	item.addEventListener("mouseleave", (e) => {
+		projectList.style = "grid-template-columns: 3fr 1fr 1fr 1fr";
+		project.forEach((item) => item.classList.remove("show"));
+		projectList.children[0].classList.add("show");
+	})
+);
