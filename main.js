@@ -1,4 +1,7 @@
+const navItem = document.querySelectorAll(".nav-item");
+
 const main = document.querySelector("main.main-container");
+const newScript = document.querySelector(".newScript");
 const templateMain = `	<section class="main">
 <div class="banner">
 	<div class="overlay"></div>
@@ -251,9 +254,24 @@ project.forEach((item) =>
 	})
 );
 </script>`;
+const templateGalerry = `
+	<script>test</script>
+`;
 
-main.insertAdjacentHTML("afterbegin", templateMain);
+const templates = [templateMain, templateGalerry];
+
+main.insertAdjacentHTML("afterbegin", templates[0]);
 const script = document.querySelector("main.main-container script");
-const scriptElement = document.createElement("script");
-scriptElement.textContent = script.textContent;
-document.body.appendChild(scriptElement);
+newScript.innerHTML = script.textContent;
+
+navItem.forEach((item) => {
+	item.addEventListener("click", (e) => {
+		navItem.forEach((item) => item.classList.remove("active"));
+		item.classList.add("active");
+		main.innerHTML = templates[item.dataset.index];
+		const script = document.querySelector("main.main-container script");
+		newScript.innerHTML = script.textContent;
+	});
+});
+
+// main.insertAdjacentHTML("afterbegin", templateMain);
