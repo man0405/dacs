@@ -1,7 +1,7 @@
 main {
 	position: relative;
 	.main {
-		position: absolute;
+		position: relative;
 		// top: 50%;
 		left: 50%;
 		transform: translateX(-50%);
@@ -38,40 +38,54 @@ main {
 				margin-block: 1rem;
 			}
 			.description-banner {
-				width: fit-content;
 				display: inline-block;
+
+				width: fit-content;
 				span {
 					display: inline-block;
-					font-size: 1.3rem;
+					font-size: 1.5rem;
 					font-weight: 400;
 					line-height: 150%;
-					position: relative;
+					position: absolute;
 					width: fit-content;
-					top: 50%;
-					transform: translateY(-50%);
+					bottom: 10%;
+					left: 50%;
+					transform: translateX(-50%);
 					border-right: 2px solid rgba(255, 255, 255, 0.75);
 					text-align: center;
 					white-space: nowrap;
 					overflow: hidden;
-
-					animation: typewriter 4s steps(44),
-						blink-caret 500ms steps(44) infinite;
-					&.active {
-						animation: hide 4s steps(44), blink-caret 500ms steps(44) infinite;
-					}
-					// &::before {
-					// 	content: "";
-					// 	position: absolute;
-					// 	display: flex;
-					// 	top: 0;
-					// 	left: 0;
-					// 	width: 100%;
-					// 	height: 100%;
-					// 	background-color: rgba(0, 0, 0, 0.803);
-					// 	border-left: 2px solid white;
-					// 	animation: typing 8s steps(40) infinite;
-					// }
+					animation: blink-caret 500ms steps(44) infinite;
 				}
+			}
+		}
+	}
+	.slogan {
+		margin-top: 15rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 3rem;
+		.slogan-item {
+			.slogan-image {
+				img {
+					width: 2.2rem;
+					height: 2.2rem;
+					object-fit: contain;
+				}
+				margin-bottom: 1rem;
+			}
+		}
+		.slogan-content {
+			.title {
+				font-size: 1.4rem;
+				line-height: 1.302;
+				font-weight: 500;
+				margin-bottom: 1.8rem;
+			}
+			.description {
+				font-size: 1.2rem;
+				line-height: 1.301;
+				font-weight: 400;
 			}
 		}
 	}
