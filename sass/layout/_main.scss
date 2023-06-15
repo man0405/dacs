@@ -147,4 +147,81 @@ main {
 			}
 		}
 	}
+	.our-projects {
+		margin-top: 20rem;
+		.title {
+			font-size: 4.8rem;
+			line-height: 1.302;
+			font-weight: 400;
+			margin-bottom: 1.2rem;
+		}
+		.project-list {
+			display: grid;
+			grid-template-columns: 3fr 1fr 1fr 1fr;
+			grid-template-rows: 52.2rem;
+			gap: 3rem;
+			transition: 500ms;
+			.project {
+				transition: 300ms;
+				position: relative;
+				overflow: hidden;
+				.overlay {
+					transform: translateY(-100%);
+					visibility: hidden;
+					opacity: 0;
+					transition: visibility 0s, opacity 0.5s linear, transform 0.5s linear;
+					position: absolute;
+					inset: 0;
+					background: linear-gradient(
+						180deg,
+						#1e1e1e 0%,
+						rgba(30, 30, 30, 0) 50.37%
+					);
+				}
+				.name-project {
+					visibility: hidden;
+					opacity: 0;
+					transition: visibility 0s, opacity 0.5s linear;
+					font-family: var(--secondary-font);
+					font-size: 2.4rem;
+					line-height: 1.302;
+					font-weight: 500;
+					color: white;
+					position: absolute;
+					top: 5%;
+					left: 5%;
+				}
+				.project-image {
+					width: 100%;
+					height: 100%;
+					img {
+						object-fit: cover;
+					}
+				}
+				button {
+					visibility: hidden;
+					opacity: 0;
+					transition: visibility 0s, opacity 0.5s linear;
+					position: absolute;
+					bottom: 5%;
+					right: 5%;
+				}
+				&.show {
+					.overlay {
+						transform: translateY(0);
+						visibility: visible;
+						opacity: 1;
+					}
+					.name-project {
+						visibility: visible;
+						opacity: 1;
+					}
+					button {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
 }
