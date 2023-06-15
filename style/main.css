@@ -10,6 +10,28 @@
   --gray1: #333333;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.title {
+  font-family: var(--secondary-font);
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 7.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -123,410 +145,6 @@ body {
     border-right-color: transparent;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ul,
-li,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--primary-font);
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.title {
-  font-family: var(--secondary-font);
-}
-
-.heading {
-  text-transform: uppercase;
-  font-size: 7.2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-button {
-  background-color: transparent;
-  color: inherit;
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  min-height: 5rem;
-  min-width: 10rem;
-}
-button:hover {
-  cursor: pointer;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-.btn-border {
-  border: 0.1rem solid white;
-  border-radius: 50px;
-}
-
-.btn-border:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.btn-full {
-  width: 100%;
-  text-align: center;
-}
-
-.btn-full:hover {
-  filter: brightness(95%);
-}
-
-.modal-login-login {
-  z-index: 100;
-  font-family: sans-serif;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-  outline: none;
-  border: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-.modal-login-login.active {
-  display: flex;
-}
-.modal-login-login .modal-login-container {
-  height: 650px;
-  width: 500px;
-  border-radius: 2rem;
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.13);
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  padding: 50px 35px;
-  position: relative;
-}
-.modal-login-login .modal-login-container .modal-login-close {
-  position: absolute;
-  background-color: white;
-  right: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 2rem;
-  border-top-right-radius: 2rem;
-  border-left: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  padding: 2rem;
-  cursor: pointer;
-}
-.modal-login-login .modal-login-container .modal-login-close ion-icon {
-  font-size: 1.8rem;
-  color: black;
-}
-.modal-login-login .modal-login-container .modal-login-header {
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-  background-color: inherit;
-}
-.modal-login-login .modal-login-container .modal-login-button {
-  width: 100%;
-  height: 7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  font-size: 1.5rem;
-  font-weight: 0.1rem;
-  margin-top: 5rem;
-  background-color: #ffffff;
-  color: black;
-  transition: 0.5s;
-  display: flex;
-}
-.modal-login-login .modal-login-container .modal-login-body {
-  padding-inline: 30px;
-}
-.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box {
-  position: relative;
-}
-.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-label {
-  position: absolute;
-  top: 3rem;
-  left: 0;
-  transform: translateY(-10%);
-  pointer-events: none;
-  font-size: 1.5rem;
-  transition: all 0.1s linear;
-}
-.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input {
-  background-color: transparent;
-  height: 100%;
-  padding: 1rem 0;
-  width: 100%;
-  border: none;
-  outline: none;
-  border: 0px none;
-  font-size: 2rem;
-  border-bottom: 1px solid #ffffff;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input:focus ~ .modal-login-label,
-.modal-login-login .modal-login-container .modal-login-body .modal-login-input-box .modal-login-input:not(:placeholder-shown) ~ .modal-login-label {
-  margin: 0;
-  padding: 0 1em;
-  top: -0.00001px;
-}
-.modal-login-login .modal-login-container .modal-login-body .modal-login-button:hover {
-  color: #ffffff;
-  background-color: transparent;
-}
-.modal-login-login .modal-login-container .modal-login-body .modal-login-icon {
-  position: absolute;
-  right: 0;
-  font-style: 1.2em;
-  color: white;
-  margin-top: 3rem;
-}
-.modal-login-login .modal-login-container .modal-login-body .body-footer {
-  margin-top: 3rem;
-}
-.modal-login-login .modal-login-container .modal-login-footer {
-  height: 70px;
-  display: flex;
-  padding: 0 30px;
-  justify-content: space-between;
-  align-items: center;
-}
-.modal-login-login .modal-login-container .modal-login-footer .modal-login-button-footer {
-  width: 48%;
-  display: flex;
-  justify-content: space-evenly;
-}
-.modal-login-login .modal-login-container .modal-login-footer .modal-login-button-footer:hover {
-  color: #0165e1;
-  background-color: transparent;
-}
-.modal-login-login .modal-login-container .modal-login-footer .facebook:hover {
-  color: #0165e1;
-}
-.modal-login-login .modal-login-container .modal-login-footer .instagram:hover {
-  color: #c13584;
-}
-
-button {
-  background-color: transparent;
-  color: inherit;
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  min-height: 5rem;
-  min-width: 10rem;
-}
-button:hover {
-  cursor: pointer;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-.btn-border {
-  border: 0.1rem solid white;
-  border-radius: 50px;
-}
-
-.btn-border:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.btn-full {
-  width: 100%;
-  text-align: center;
-}
-
-.btn-full:hover {
-  filter: brightness(95%);
-}
-
-.modal-register-login {
-  z-index: 100;
-  font-family: sans-serif;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-  outline: none;
-  border: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-.modal-register-login.active {
-  display: flex;
-}
-.modal-register-login .modal-register-container {
-  height: 650px;
-  width: 500px;
-  border-radius: 2rem;
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.13);
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  padding: 50px 35px;
-  position: relative;
-}
-.modal-register-login .modal-register-container .modal-register-close {
-  pointer-events: all;
-  position: absolute;
-  background-color: white;
-  right: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 2rem;
-  border-top-right-radius: 2rem;
-  border-left: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  padding: 2rem;
-  cursor: pointer;
-}
-.modal-register-login .modal-register-container .modal-register-close ion-icon {
-  font-size: 1.8rem;
-  color: black;
-  pointer-events: none;
-}
-.modal-register-login .modal-register-container .modal-register-header {
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem;
-  background-color: inherit;
-}
-.modal-register-login .modal-register-container .modal-register-button {
-  width: 100%;
-  height: 7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  font-size: 1.5rem;
-  font-weight: 0.1rem;
-  margin-top: 5rem;
-  background-color: #ffffff;
-  color: black;
-  transition: 0.5s;
-  display: flex;
-}
-.modal-register-login .modal-register-container .modal-register-body {
-  padding-inline: 30px;
-}
-.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box {
-  position: relative;
-}
-.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-label {
-  position: absolute;
-  top: 3rem;
-  left: 0;
-  transform: translateY(-10%);
-  pointer-events: none;
-  font-size: 1.5rem;
-  transition: all 0.1s linear;
-}
-.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input {
-  background-color: transparent;
-  height: 100%;
-  padding: 1rem 0;
-  width: 100%;
-  border: none;
-  outline: none;
-  border: 0px none;
-  font-size: 2rem;
-  border-bottom: 1px solid #ffffff;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input:focus ~ .modal-register-label,
-.modal-register-login .modal-register-container .modal-register-body .modal-register-input-box .modal-register-input:not(:placeholder-shown) ~ .modal-register-label {
-  margin: 0;
-  padding: 0 1em;
-  top: -0.00001px;
-}
-.modal-register-login .modal-register-container .modal-register-body .modal-register-button:hover {
-  color: #ffffff;
-  background-color: transparent;
-}
-.modal-register-login .modal-register-container .modal-register-body .modal-register-icon {
-  position: absolute;
-  right: 0;
-  font-style: 1.2em;
-  color: white;
-  margin-top: 3rem;
-}
-.modal-register-login .modal-register-container .modal-register-body .body-footer {
-  margin-top: 3rem;
-}
-.modal-register-login .modal-register-container .modal-register-footer {
-  height: 70px;
-  display: flex;
-  padding: 0 30px;
-  justify-content: space-between;
-  align-items: center;
-}
-.modal-register-login .modal-register-container .modal-register-footer .modal-register-button-footer {
-  width: 48%;
-  display: flex;
-  justify-content: space-evenly;
-}
-.modal-register-login .modal-register-container .modal-register-footer .modal-register-button-footer:hover {
-  color: #0165e1;
-  background-color: transparent;
-}
-.modal-register-login .modal-register-container .modal-register-footer .facebook:hover {
-  color: #0165e1;
-}
-.modal-register-login .modal-register-container .modal-register-footer .instagram:hover {
-  color: #c13584;
-}
-
 header {
   display: flex;
   align-items: center;
@@ -593,416 +211,84 @@ header .user ion-icon {
   font-size: 2.4rem;
 }
 
-header {
-  overflow: hidden;
+main {
   position: relative;
 }
-header .container {
-  height: 100vh;
-  width: 120rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 0 auto;
-  color: white;
-}
-header .container nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
-}
-header .container nav .logo {
-  width: 15rem;
-  height: 5rem;
-  background-color: red;
-}
-header .container nav ul {
-  display: flex;
-}
-header .container nav ul li {
-  margin-left: 3rem;
-  cursor: pointer;
-}
-header .container nav ul li button {
-  font-size: 1.6rem;
-  border: none;
-}
-header .container .content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .container .content .introduce {
-  position: relative;
-  width: 40%;
-  height: 50%;
-  margin-right: 3rem;
-}
-header .container .content .introduce .wrapper {
+main .main {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: fit-content;
-  padding: 0 2.5rem 0 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  pointer-events: none;
-}
-header .container .content .introduce .wrapper.active {
-  pointer-events: all;
-}
-header .container .content .introduce .wrapper.active span > * {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: calc((var(--idx)) * 0.1s);
-}
-header .container .content .introduce .wrapper span {
-  overflow: hidden;
-}
-header .container .content .introduce .wrapper span > * {
-  transition: 0.5s ease;
-  opacity: 0;
-  transform: translateY(30rem);
-  transition-delay: calc((3 - var(--idx)) * 0.1s);
-}
-header .container .content .introduce .wrapper span .address {
-  font-size: 2.4rem;
-  font-weight: 500;
-}
-header .container .content .introduce .wrapper span .name {
-  font-size: 5.5rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  line-height: 1.1;
-  letter-spacing: 0.1rem;
-  margin-top: 1rem;
-}
-header .container .content .introduce .wrapper span .description {
-  font-size: 1.6rem;
-  margin-top: 0.8rem;
-  font-weight: 400;
-}
-header .container .content .introduce .wrapper span .discover-button {
-  width: 25rem;
-  height: 5rem;
-  border-radius: 50px;
-  margin-top: 2rem;
-  transition: 0.5s ease;
-}
-header .container .content .thumbnail-list {
-  height: 30rem;
-  flex: 1;
-}
-header .container .content .thumbnail-list .wrapper {
-  height: 30rem;
-}
-header .container .content .thumbnail-list .wrapper .thumbnail {
-  position: absolute;
-  height: 30rem;
-  width: 20rem;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
-  transform: translateX(calc(var(--idx) * 23rem));
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-}
-header .container .content .thumbnail-list .wrapper .thumbnail.zoom {
-  z-index: -1;
-  border-radius: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100vw;
-  height: 100vh;
-  /* transform: translate(calc(100vw / -3 * 1.2), calc(100vh / -4 * 0.28)); */
-  transform: translate(calc(-40vw - 3rem), calc((-100vh + 30rem + 10rem) / 2));
-  filter: brightness(40%);
-  box-shadow: none;
+  height: 80vh;
 }
-@media (min-width: 1200px) {
-  header .container .content .thumbnail-list .wrapper .thumbnail.zoom {
-    transform: translate(calc((100vw - 20rem - 4rem) / -2 - 3rem), calc((-100vh + 30rem + 10rem) / 2));
-  }
-}
-header .container .content .thumbnail-list .wrapper .thumbnail img {
+main .main .overlay {
+  position: absolute;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: 80vh;
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.7301514356) 0%, rgba(0, 212, 255, 0) 100%);
+}
+main .main .img-banner img {
+  width: 100vw;
+  height: 80vh;
   object-fit: cover;
 }
-header .container .navigation {
-  margin-left: 40%;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 5rem 5rem 5rem 0;
-}
-header .container .navigation .next-button {
-  width: 18rem;
-  border-radius: 50px;
-}
-header .container .navigation .line {
-  flex: 1;
-  height: 0.2rem;
-  background-color: #fff;
-}
-header .container .navigation .ordinal-number {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 5rem;
-  height: 5rem;
-  overflow: hidden;
-}
-header .container .navigation .ordinal-number h2 {
-  font-size: 3.5rem;
-  font-weight: 400;
-  line-height: 1;
+main .main .content {
   position: absolute;
-  transform: translateY(200%);
-  transition: 0.5s ease;
-}
-header .container .navigation .ordinal-number h2.active {
-  transform: unset;
-}
-
-main {
-  position: fixed;
-  bottom: 0;
+  bottom: 10%;
   left: 50%;
-  transform: translate(-50%, 90%);
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
 }
-main .intro {
-  width: 90%;
-  margin: 0 auto;
-  background-color: white;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  height: 80vh;
-  padding: 2.4rem 4.6rem;
-  animation: intro-effect 3s infinite;
-  transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+main .main .content .title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-block: 1rem;
 }
-main .intro.hide {
-  animation: hide-intro 1s forwards;
+main .main .content .description-banner {
+  width: fit-content;
+  display: inline-block;
 }
-main .intro.active {
-  overflow-y: scroll;
-  animation: show-intro 1s forwards;
-  transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
-}
-main .intro.active .header button {
-  display: block;
-}
-main .intro .header {
-  display: flex;
-  column-gap: calc(50% - 10rem);
-  margin-bottom: 8rem;
-  position: relative;
-}
-main .intro .header .close {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 1.4rem;
-  display: none;
-}
-main .intro .header ion-icon {
-  font-size: 2.8rem;
-  margin: 0 auto;
-}
-main .intro .body .name-brand {
-  font-size: 5.6rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-main .intro .body .address {
-  font-size: 1.6rem;
-  font-weight: 300;
-  margin-bottom: 4rem;
-}
-main .intro .body .description {
-  font-size: 1.8rem;
+main .main .content .description-banner span {
+  display: inline-block;
+  font-size: 1.3rem;
   font-weight: 400;
-  margin-bottom: 8rem;
-}
-main .intro .body .gallery h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1.2rem;
-}
-main .intro .body .gallery .gallery-list {
-  overflow: hidden;
-}
-main .intro .body .gallery .gallery-list .gallery-item {
-  margin-bottom: 2.4rem;
-}
-main .intro .body .gallery .gallery-list .gallery-item .name-town {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-main .intro .body .gallery .gallery-list .gallery-item .description {
-  margin-bottom: 1rem;
-}
-main .intro .body .gallery .gallery-list .gallery-item .description .address {
-  margin-bottom: 0.5rem;
-  font-weight: 200;
-  font-size: 1.6rem;
-}
-main .intro .body .gallery .gallery-list .gallery-item .description .other {
-  margin-bottom: 0.5rem;
-  font-size: 1.8rem;
-  font-weight: 400;
-}
-main .intro .footer .partners {
-  overflow: hidden;
-  margin-bottom: 5rem;
-}
-main .intro .footer .partners .partners-header {
-  font-size: 1, 7rem;
-  color: gray;
-  margin-bottom: 2.8rem;
-}
-main .intro .footer .partners .partners-icon {
-  display: flex;
-  align-items: center;
-  column-gap: 5rem;
-}
-main .intro .footer button {
-  background-color: #dadada;
-}
-main .booking {
-  position: absolute;
-  background-color: white;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  padding: 2.6rem 5.2rem;
-  transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  main .booking {
-    bottom: 0;
-  }
-}
-@media (max-width: 479px) {
-  main .booking {
-    bottom: 0;
-  }
-}
-main .booking.active {
-  transition: all 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
-  overflow-y: scroll;
-  transform: translateY(-154vh);
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  main .booking.active {
-    transform: translateY(calc(-100% - 2.6rem));
-  }
-}
-@media (max-width: 479px) {
-  main .booking.active {
-    transform: translateY(calc(-70vh - 2.6rem));
-  }
-}
-main .booking.active .header button {
-  display: block;
-}
-main .booking .header {
-  display: flex;
-  column-gap: calc(50% - 10rem);
-  margin-bottom: 12rem;
+  line-height: 150%;
   position: relative;
-}
-main .booking .header .close {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 1.6rem;
-  display: none;
-}
-main .booking .header ion-icon {
-  font-size: 3.4rem;
-  margin: 0 auto;
-}
-main .booking .body .description {
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 3.6rem;
-}
-main .booking .body form {
-  margin-bottom: 4rem;
-}
-main .booking .body form h3 {
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  margin-bottom: 3.6rem;
-}
-main .booking .body form .list-input {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-main .booking .body form .list-input .box {
-  position: relative;
-  height: 8rem;
-}
-main .booking .body form .list-input .box input {
-  width: 100%;
-  height: 100%;
-  font-size: 2.5rem;
-  border-radius: 1rem;
-  border: 0.1rem solid #545454;
-  padding: 2rem;
-  outline: none;
-}
-main .booking .body form .list-input .box label {
-  position: absolute;
-  font-size: 1.8rem;
-  color: #535353;
-  user-select: text;
+  width: fit-content;
   top: 50%;
   transform: translateY(-50%);
-  left: 1.5rem;
-  transition: all 0.1s linear;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 4s steps(44), blink-caret 500ms steps(44) infinite;
 }
-main .booking .body form .list-input .box input:focus ~ label,
-main .booking .body form .list-input .box input:not(:placeholder-shown) ~ label {
-  top: 0;
-  font-size: 2rem;
-  color: #545454;
-  background-color: #fff;
-  padding: 0 1rem;
-}
-main .booking .body button {
-  border: 0.1rem solid black;
-}
-main .booking .body button:hover {
-  filter: brightness(80%);
+main .main .content .description-banner span.active {
+  animation: hide 4s steps(44), blink-caret 500ms steps(44) infinite;
 }
 
-.btn-private {
-  position: absolute;
-  bottom: 5%;
-  left: 8%;
-  color: white;
-  font-size: 1.6rem;
-  font-weight: 400;
-  padding: 1.8rem 3.8rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-@media (min-width: 768px) and (max-width: 1023px) {
-  .btn-private {
-    bottom: 10%;
-  }
+
+ul,
+li,
+ol {
+  list-style: none;
 }
-@media (max-width: 479px) {
-  .btn-private {
-    bottom: 13%;
-  }
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
-.btn-private.active {
-  color: black;
-  border: 1px solid black;
-}
-.btn-private.hidden {
-  display: none;
+
+img {
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
