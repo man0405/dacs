@@ -4,7 +4,7 @@
   --primary-font: "Prompt";
   --secondary-font: "Roboto", sans-serif;
   --dark-color: #14213d;
-  --primary-color: FCA311;
+  --primary-color: #fca311;
   --second-color: #e5e5e5;
   --light-color: #fffff;
   --gray1: #333333;
@@ -74,6 +74,10 @@ body {
   margin: 0 auto;
   max-width: 120rem;
   padding: 0 10px;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .line-effect {
@@ -291,6 +295,104 @@ main .slogan .slogan-content .description {
   line-height: 1.301;
   font-weight: 400;
 }
+main .step {
+  margin-top: 15rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+main .step .step-image img {
+  width: 57.5rem;
+  height: 71rem;
+  opacity: 0.9;
+}
+main .step .step-content .title {
+  font-size: 4.8rem;
+  line-height: 1.302;
+  font-weight: 200;
+  margin-bottom: 3rem;
+}
+main .step .step-content .description {
+  max-width: 54.2rem;
+  line-height: 1.302;
+  font-weight: 200;
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+}
+main .step .step-content .step-list {
+  display: flex;
+  column-gap: 3rem;
+  margin-bottom: 3rem;
+}
+main .step .step-content .step-list .step-item {
+  border: 1px solid var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  padding: 4.2rem 6.4rem 4.2rem 1.5rem;
+}
+main .step .step-content .step-list .step-item ion-icon {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+main .step .step-content .step-list .step-item span {
+  max-width: 9rem;
+  line-height: 1.302;
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+main .step .step-content .step-list .step-item:first-child {
+  background-color: var(--dark-color);
+}
+main .step .step-content .step-list .step-item:first-child ion-icon {
+  color: var(--primary-color);
+}
+main .step .step-content .step-list .step-item:first-child span {
+  color: white;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  min-height: 5rem;
+  min-width: 10rem;
+}
+button:hover {
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn-border {
+  border: 0.1rem solid white;
+  border-radius: 50px;
+}
+
+.btn-border:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-full:hover {
+  filter: brightness(95%);
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  border: 1px solid var(--dark-color);
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.2rem;
+  gap: 0.6rem;
+}
 
 * {
   margin: 0;
@@ -312,6 +414,10 @@ a {
 img {
   width: 100%;
   height: 100%;
+}
+
+button {
+  border: none;
 }
 
 /*# sourceMappingURL=multipage.css.map */
