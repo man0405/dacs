@@ -366,7 +366,7 @@ main .our-projects .project-list {
   transition: 500ms;
 }
 main .our-projects .project-list .project {
-  transition: 300ms;
+  transition: 500ms;
   position: relative;
   overflow: hidden;
 }
