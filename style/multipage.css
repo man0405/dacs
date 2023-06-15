@@ -266,9 +266,30 @@ main .main .content .description-banner span {
   overflow: hidden;
   animation: blink-caret 500ms steps(44) infinite;
 }
+main .slogan {
+  margin-top: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+}
+main .slogan .slogan-item .slogan-image {
+  margin-bottom: 1rem;
+}
 main .slogan .slogan-item .slogan-image img {
-  width: 22px;
-  height: 22px;
+  width: 2.2rem;
+  height: 2.2rem;
+  object-fit: contain;
+}
+main .slogan .slogan-content .title {
+  font-size: 1.4rem;
+  line-height: 1.302;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+}
+main .slogan .slogan-content .description {
+  font-size: 1.2rem;
+  line-height: 1.301;
+  font-weight: 400;
 }
 
 * {
