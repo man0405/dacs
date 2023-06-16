@@ -2,8 +2,7 @@ const modal = document.querySelector(".modal");
 const backdrop = document.querySelector(".backdrop");
 
 backdrop.addEventListener("click", () => {
-	backdrop.classList.remove("active");
-	modal.classList.remove("active");
+	backdrop.parentNode.classList.remove("active");
 	modal.innerHTML = "";
 });
 
@@ -514,8 +513,8 @@ function clickGalleryItem(index) {
 	galleryItem = galleryListAll[index].querySelectorAll(".gallery-item");
 	galleryItem.forEach((gallery) =>
 		gallery.addEventListener("click", (e) => {
-			backdrop.classList.add("active");
-			modal.classList.add("active");
+			backdrop.parentNode.classList.add("active");
+
 			const link = e.target.attributes.src.textContent;
 			modal.innerHTML = '<img '+'src=' + '"' +link + '"' + '>';
 		})
