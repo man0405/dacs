@@ -83,6 +83,33 @@ body {
   transition: all 0.25s linear;
 }
 
+.backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(65, 65, 65, 0.9);
+  z-index: 5;
+  display: none;
+}
+.backdrop.active {
+  display: block;
+}
+
+.modal {
+  display: none;
+  z-index: 10;
+  width: fit-content;
+  height: 90vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal.active {
+  display: inline-block;
+}
+
 @keyframes intro-effect {
   0% {
     transform: translateY(-10px);
@@ -118,6 +145,14 @@ body {
     opacity: 1;
   }
 }
+@keyframes opacity-hide {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0;
+  }
+}
 @keyframes hide {
   40%, 60% {
     width: 100%;
@@ -140,6 +175,11 @@ body {
   }
   to {
     border-right-color: transparent;
+  }
+}
+@keyframes load89234 {
+  100% {
+    background-position: -100% 0;
   }
 }
 header {
@@ -439,21 +479,37 @@ main section.gallery .gallery-wrap .list-wrap {
   display: flex;
 }
 main section.gallery .gallery-wrap .list-wrap .gallery-list {
-  display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 26rem 26rem;
   gap: 3rem;
   min-width: 100%;
+  display: none;
+}
+main section.gallery .gallery-wrap .list-wrap .gallery-list.gallery-loader:not(.active) .gallery-item {
+  animation: opacity-hide 0.5s;
+}
+main section.gallery .gallery-wrap .list-wrap .gallery-list.gallery-loader .gallery-item {
+  background: linear-gradient(120deg, #e5e5e5 30%, #f0f0f0 38%, #f0f0f0 40%, #e5e5e5 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load89234 2s infinite;
+}
+main section.gallery .gallery-wrap .list-wrap .gallery-list .gallery-item {
+  animation-delay: 1000ms;
+  animation: opacity-effect 1s ease;
 }
 main section.gallery .gallery-wrap .list-wrap .gallery-list .gallery-item img {
   object-fit: cover;
 }
-main section.gallery .funtion {
+main section.gallery .gallery-wrap .list-wrap .gallery-list.active {
+  display: grid;
+}
+main section.gallery .function {
   display: flex;
   align-items: center;
   gap: 2.5rem;
 }
-main section.gallery .funtion .numberic {
+main section.gallery .function .numberic {
   position: relative;
   font-size: 2.4rem;
   line-height: 1;
@@ -462,7 +518,7 @@ main section.gallery .funtion .numberic {
   align-items: center;
   gap: 9rem;
 }
-main section.gallery .funtion .numberic .current-number::before {
+main section.gallery .function .numberic .current-number::before {
   content: "";
   position: absolute;
   width: 4.38rem;
@@ -473,11 +529,11 @@ main section.gallery .funtion .numberic .current-number::before {
   border: 1px solid #e0e0e0;
   transform: matrix(-0.71, 0.71, -0.71, -0.71, 0, 0);
 }
-main section.gallery .funtion .numberic .amount {
+main section.gallery .function .numberic .amount {
   color: var(--second-color);
 }
-main section.gallery .funtion .btn-prev,
-main section.gallery .funtion .btn-next {
+main section.gallery .function .btn-prev,
+main section.gallery .function .btn-next {
   height: 5rem;
 }
 

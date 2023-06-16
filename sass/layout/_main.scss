@@ -245,20 +245,45 @@ main {
 			.list-wrap {
 				display: flex;
 				.gallery-list {
-					display: grid;
+					// display: grid;
 					grid-template-columns: repeat(5, 1fr);
 					grid-template-rows: 26rem 26rem;
 					gap: 3rem;
 					min-width: 100%;
+					display: none;
+					&.gallery-loader {
+						&:not(.active) {
+							.gallery-item {
+								animation: opacity-hide 0.5s;
+							}
+						}
+						.gallery-item {
+							background: linear-gradient(
+								120deg,
+								#e5e5e5 30%,
+								#f0f0f0 38%,
+								#f0f0f0 40%,
+								#e5e5e5 48%
+							);
+							background-size: 200% 100%;
+							background-position: 100% 0;
+							animation: load89234 2s infinite;
+						}
+					}
 					.gallery-item {
+						animation-delay: 1000ms;
+						animation: opacity-effect 1s ease;
 						img {
 							object-fit: cover;
 						}
 					}
+					&.active {
+						display: grid;
+					}
 				}
 			}
 		}
-		.funtion {
+		.function {
 			display: flex;
 			align-items: center;
 			gap: 2.5rem;

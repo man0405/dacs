@@ -1,3 +1,12 @@
+const modal = document.querySelector(".modal");
+const backdrop = document.querySelector(".backdrop");
+
+backdrop.addEventListener("click", () => {
+	backdrop.classList.remove("active");
+	modal.classList.remove("active");
+	modal.innerHTML = "";
+});
+
 const navItem = document.querySelectorAll(".nav-item");
 
 const main = document.querySelector("main.main-container");
@@ -254,9 +263,265 @@ project.forEach((item) =>
 	})
 );
 </script>`;
-const templateGalerry = `
-	<script>console.log("oke")</script>
-`;
+const templateGalerry = `<section class="gallery">
+<h2 class="gallery-header">
+	Photo <br /><span class="bold">Gallery</span>
+</h2>
+<div class="gallery-wrap">
+	<div class="list-wrap">
+		<div class="gallery-list gallery-list-none">
+			<div class="gallery-item">
+				<img src="./image/gallery/1.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/2.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/3.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/4.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/5.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/6.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/7.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/8.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/9.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/10.jpg" alt="" />
+			</div>
+		</div>
+		<div class="gallery-list gallery-list-none">
+			<div class="gallery-item">
+				<img src="./image/gallery/1.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/2.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/3.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/4.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/5.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/6.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/7.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/8.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/9.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/10.jpg" alt="" />
+			</div>
+		</div>
+		<div class="gallery-list gallery-list-none">
+			<div class="gallery-item">
+				<img src="./image/gallery/1.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/2.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/3.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/4.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/5.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/6.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/7.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/8.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/9.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/10.jpg" alt="" />
+			</div>
+		</div>
+		<div class="gallery-list gallery-list-none">
+			<div class="gallery-item">
+				<img src="./image/gallery/1.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/2.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/3.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/4.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/5.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/6.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/7.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/8.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/9.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/10.jpg" alt="" />
+			</div>
+		</div>
+		<div class="gallery-list gallery-list-none">
+			<div class="gallery-item">
+				<img src="./image/gallery/3.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/1.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/2.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/4.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/5.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/6.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/7.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/8.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/9.jpg" alt="" />
+			</div>
+			<div class="gallery-item">
+				<img src="./image/gallery/10.jpg" alt="" />
+			</div>
+		</div>
+		<div class="gallery-list gallery-loader active">
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+			<div class="gallery-item"></div>
+		</div>
+	</div>
+</div>
+<div class="function">
+	<div class="numberic">
+		<div class="current-number">0<br /><span>1</span></div>
+		<div class="amount">05</div>
+	</div>
+	<div class="btn-prev primary-btn">
+		<ion-icon name="arrow-back-outline"></ion-icon>
+	</div>
+	<div class="btn-next primary-btn">
+		<ion-icon name="arrow-forward-outline"></ion-icon>
+	</div>
+</div>
+</section>
+<script>
+const galleryLoader = document.querySelector(".gallery-loader");
+const listWrap = document.querySelector(".list-wrap");
+const galleryListAll = document.querySelectorAll(".gallery-list-none");
+const btnPrev = document.querySelector(".btn-prev");
+const btnNext = document.querySelector(".btn-next");
+const currentNumber = document.querySelector(".current-number span");
+const modal = document.querySelector(".modal");
+const backdrop = document.querySelector(".backdrop");
+let index = 0;
+let galleryItem =
+	galleryListAll[index].querySelectorAll(".gallery-item");
+clickGalleryItem(index);
+setTimeout(() => {
+	galleryLoader.classList.remove("active");
+	listWrap.children[0].classList.add("active");
+}, 1000);
+
+btnPrev.addEventListener("click", () => {
+	if (index <= 0) {
+		index = galleryListAll.length - 1;
+	} else {
+		index--;
+	}
+	galleryListAll.forEach((gallery) =>
+		gallery.classList.remove("active")
+	);
+	galleryLoader.classList.add("active");
+	currentNumber.textContent = index + 1;
+	clickGalleryItem(index);
+	setTimeout(() => {
+		galleryLoader.classList.remove("active");
+		galleryListAll[index].classList.add("active");
+	}, 1000);
+});
+btnNext.addEventListener("click", () => {
+	if (index >= galleryListAll.length - 1) {
+		index = 0;
+		console.log("index 0");
+	} else {
+		index++;
+	}
+	galleryListAll.forEach((gallery) =>
+		gallery.classList.remove("active")
+	);
+	galleryLoader.classList.add("active");
+	currentNumber.textContent = index + 1;
+	clickGalleryItem(index);
+	setTimeout(() => {
+		galleryLoader.classList.remove("active");
+		galleryListAll[index].classList.add("active");
+	}, 1000);
+});
+
+function clickGalleryItem(index) {
+	galleryItem = galleryListAll[index].querySelectorAll(".gallery-item");
+	galleryItem.forEach((gallery) =>
+		gallery.addEventListener("click", (e) => {
+			backdrop.classList.add("active");
+			modal.classList.add("active");
+			const link = e.target.attributes.src.textContent;
+			modal.innerHTML = '<img '+'src=' + '"' +link + '"' + '>';
+		})
+	);
+}
+</script>`;
 
 const templates = [templateMain, templateGalerry];
 
