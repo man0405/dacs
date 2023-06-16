@@ -255,23 +255,29 @@ project.forEach((item) =>
 );
 </script>`;
 const templateGalerry = `
-	<script>test</script>
+	<script>console.log("oke")</script>
 `;
 
 const templates = [templateMain, templateGalerry];
 
-main.insertAdjacentHTML("afterbegin", templates[0]);
+main.innerHTML = templates[0];
 const script = document.querySelector("main.main-container script");
-newScript.innerHTML = script.textContent;
+eval(script.textContent);
+script.parentNode.removeChild(script);
+
+// newScript.innerHTML = script.textContent;
 
 navItem.forEach((item) => {
 	item.addEventListener("click", (e) => {
+		if (e.target.classList.contains("active")) {
+			return;
+		}
 		navItem.forEach((item) => item.classList.remove("active"));
 		item.classList.add("active");
 		main.innerHTML = templates[item.dataset.index];
 		const script = document.querySelector("main.main-container script");
-		newScript.innerHTML = script.textContent;
+		// newScript.innerHTML = script.textContent;
+		eval(script.textContent);
+		script.parentNode.removeChild(script);
 	});
 });
-
-// main.insertAdjacentHTML("afterbegin", templateMain);

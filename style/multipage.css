@@ -10,17 +10,6 @@
   --gray1: #333333;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--primary-font);
-  font-weight: 500;
-  line-height: 1.5;
-}
-
 .title {
   font-family: var(--secondary-font);
 }
@@ -78,6 +67,10 @@ body {
 
 .underline {
   text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .line-effect {
@@ -422,6 +415,71 @@ main .our-projects .project-list .project.show button {
   visibility: visible;
   opacity: 1;
 }
+main section.gallery {
+  margin-top: 6rem;
+  font-family: var(--secondary-font);
+}
+main section.gallery .gallery-header {
+  font-size: 6.4rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 6rem;
+  color: var(--second-color);
+}
+main section.gallery .gallery-header span {
+  color: var(--dark-color);
+}
+main section.gallery .gallery-wrap {
+  border-top: 1px solid #f2f2f2;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+main section.gallery .gallery-wrap .list-wrap {
+  display: flex;
+}
+main section.gallery .gallery-wrap .list-wrap .gallery-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 26rem 26rem;
+  gap: 3rem;
+  min-width: 100%;
+}
+main section.gallery .gallery-wrap .list-wrap .gallery-list .gallery-item img {
+  object-fit: cover;
+}
+main section.gallery .funtion {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+main section.gallery .funtion .numberic {
+  position: relative;
+  font-size: 2.4rem;
+  line-height: 1;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 9rem;
+}
+main section.gallery .funtion .numberic .current-number::before {
+  content: "";
+  position: absolute;
+  width: 4.38rem;
+  height: 0px;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #e0e0e0;
+  transform: matrix(-0.71, 0.71, -0.71, -0.71, 0, 0);
+}
+main section.gallery .funtion .numberic .amount {
+  color: var(--second-color);
+}
+main section.gallery .funtion .btn-prev,
+main section.gallery .funtion .btn-next {
+  height: 5rem;
+}
 
 button {
   background-color: transparent;
@@ -464,6 +522,7 @@ button:hover {
   display: flex;
   align-items: center;
   padding: 1rem 2.2rem;
+  width: fit-content;
 }
 
 * {
