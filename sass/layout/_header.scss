@@ -21,6 +21,8 @@ header {
 				display: flex;
 				align-items: center;
 				text-align: center;
+				border-top: 1px solid transparent;
+				border-bottom: 1px solid transparent;
 				&::before {
 					content: "";
 					position: absolute;
@@ -39,11 +41,11 @@ header {
 					}
 				}
 				&.active {
-					border-top: 1px solid var(--gray1);
-					border-bottom: 1px solid var(--gray1);
+					color: var(--primary-color);
+					border-color: var(--primary-color);
+					transition: border-color 0.5s;
 					&:hover {
-						color: var(--hover-color);
-						border-color: var(--hover-color);
+						filter: brightness(120%);
 						&::before {
 							width: 0;
 						}

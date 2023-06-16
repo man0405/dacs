@@ -162,7 +162,7 @@ main {
 			gap: 3rem;
 			transition: 500ms;
 			.project {
-				transition: 300ms;
+				transition: 500ms;
 				position: relative;
 				overflow: hidden;
 				.overlay {
@@ -221,6 +221,100 @@ main {
 						opacity: 1;
 					}
 				}
+			}
+		}
+	}
+	section.gallery {
+		margin-top: 6rem;
+		font-family: var(--secondary-font);
+		.gallery-header {
+			font-size: 6.4rem;
+			font-weight: 300;
+			line-height: 1;
+			margin-bottom: 6rem;
+			color: var(--second-color);
+			span {
+				color: var(--dark-color);
+			}
+		}
+		.gallery-wrap {
+			border-top: 1px solid #f2f2f2;
+			padding: 3rem 0;
+			margin-bottom: 3rem;
+			overflow: hidden;
+			.list-wrap {
+				display: flex;
+				.gallery-list {
+					// display: grid;
+					grid-template-columns: repeat(5, 1fr);
+					grid-template-rows: 26rem 26rem;
+					gap: 3rem;
+					min-width: 100%;
+					display: none;
+					&.gallery-loader {
+						&:not(.active) {
+							.gallery-item {
+								animation: opacity-hide 0.5s;
+							}
+						}
+						.gallery-item {
+							background: linear-gradient(
+								120deg,
+								#e5e5e5 30%,
+								#f0f0f0 38%,
+								#f0f0f0 40%,
+								#e5e5e5 48%
+							);
+							background-size: 200% 100%;
+							background-position: 100% 0;
+							animation: load89234 2s infinite;
+						}
+					}
+					.gallery-item {
+						animation-delay: 1000ms;
+						animation: opacity-effect 1s ease;
+						img {
+							object-fit: cover;
+						}
+					}
+					&.active {
+						display: grid;
+					}
+				}
+			}
+		}
+		.function {
+			display: flex;
+			align-items: center;
+			gap: 2.5rem;
+			.numberic {
+				position: relative;
+				font-size: 2.4rem;
+				line-height: 1;
+				font-weight: 400;
+				display: inline-flex;
+				align-items: center;
+				gap: 9rem;
+				.current-number {
+					&::before {
+						content: "";
+						position: absolute;
+						width: 4.38rem;
+						height: 0px;
+						left: 30%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						border: 1px solid #e0e0e0;
+						transform: matrix(-0.71, 0.71, -0.71, -0.71, 0, 0);
+					}
+				}
+				.amount {
+					color: var(--second-color);
+				}
+			}
+			.btn-prev,
+			.btn-next {
+				height: 5rem;
 			}
 		}
 	}
