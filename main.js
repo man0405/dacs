@@ -263,7 +263,7 @@ project.forEach((item) =>
 );
 </script>`;
 const templateGalerry = `<section class="gallery">
-<h2 class="gallery-header">
+<h2 class="gallery-header gray-black-text">
 	Photo <br /><span class="bold">Gallery</span>
 </h2>
 <div class="gallery-wrap">
@@ -521,8 +521,437 @@ function clickGalleryItem(index) {
 	);
 }
 </script>`;
+const templateProject = `<section class="projects">
+<h2 class="project-header gray-black-text">
+	Our <br /><span class="bold">Projects</span>
+</h2>
+<div class="project-wrap">
+	<div class="project-list-wrap">
+		<div class="project-list project-list-none">
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project-list project-list-none">
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project-list project-list-none">
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project-list project-list-none">
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project-list project-list-none">
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img">
+					<img src="./image/project1.png" alt="" />
+				</div>
+				<div class="project-content">
+					<div class="title">Sample Project</div>
+					<div class="description">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+						Deserunt eligendi atque ratione quis soluta repellat quidem
+						doloribus minus, iusto ipsum expedita dolores culpa
+						voluptates eveniet id esse vitae voluptatem? Labore!
+					</div>
+					<div class="primary-btn btn-view-more">
+						View More
+						<ion-icon
+							name="arrow-forward-outline"
+							style="margin-left: 2rem"
+						></ion-icon>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="project-list project-loader active">
+			<div class="project">
+				<div class="project-img"></div>
+				<div class="project-content">
+					<div class="title"></div>
+					<div class="description"></div>
+					<div class="primary-btn"></div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img"></div>
+				<div class="project-content">
+					<div class="title"></div>
+					<div class="description"></div>
+					<div class="primary-btn"></div>
+				</div>
+			</div>
+			<div class="project">
+				<div class="project-img"></div>
+				<div class="project-content">
+					<div class="title"></div>
+					<div class="description"></div>
+					<div class="primary-btn"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-const templates = [templateMain, templateGalerry];
+<div class="function">
+	<div class="numberic">
+		<div class="current-number">0<br /><span>1</span></div>
+		<div class="amount">05</div>
+	</div>
+	<div class="btn-prev primary-btn">
+		<ion-icon name="arrow-back-outline"></ion-icon>
+	</div>
+	<div class="btn-next primary-btn">
+		<ion-icon name="arrow-forward-outline"></ion-icon>
+	</div>
+</div>
+</section>
+<script>
+const projectLoader = document.querySelector(".project-loader");
+const projectListWrap = document.querySelector(".project-list-wrap");
+const projectListAll = document.querySelectorAll(".project-list-none");
+const btnPrev = document.querySelector(".btn-prev");
+const btnNext = document.querySelector(".btn-next");
+const currentNumber = document.querySelector(".current-number span");
+const modal = document.querySelector(".modal");
+const backdrop = document.querySelector(".backdrop");
+const viewMore = document.querySelectorAll(".btn-view-more");
+let index = 0;
+setTimeout(() => {
+	projectLoader.classList.remove("active");
+	projectListWrap.children[0].classList.add("active");
+}, 1000);
+
+btnPrev.addEventListener("click", () => {
+	if (index <= 0) {
+		index = projectListAll.length - 1;
+	} else {
+		index--;
+	}
+	projectListAll.forEach((gallery) =>
+		gallery.classList.remove("active")
+	);
+	projectLoader.classList.add("active");
+	currentNumber.textContent = index + 1;
+	setTimeout(() => {
+		projectLoader.classList.remove("active");
+		projectListAll[index].classList.add("active");
+	}, 1000);
+});
+btnNext.addEventListener("click", () => {
+	if (index >= projectListAll.length - 1) {
+		index = 0;
+		console.log("index 0");
+	} else {
+		index++;
+	}
+	projectListAll.forEach((gallery) =>
+		gallery.classList.remove("active")
+	);
+	projectLoader.classList.add("active");
+	currentNumber.textContent = index + 1;
+	setTimeout(() => {
+		projectLoader.classList.remove("active");
+		projectListAll[index].classList.add("active");
+	}, 1000);
+});
+
+viewMore.forEach((item) =>
+	item.addEventListener("click", () => {
+		console.log("viewMore");
+	})
+);
+</script>`;
+
+const templates = [templateMain, templateGalerry, templateProject];
 
 main.innerHTML = templates[0];
 const script = document.querySelector("main.main-container script");
