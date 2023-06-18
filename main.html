@@ -88,9 +88,153 @@
 					</div>
 					<div class="interior">
 						<div class="subtitle">Interior Service</div>
+						<div class="swiper-container">
+							<div class="swiper-around">
+								<div class="btn-prev btn-second">
+									<ion-icon name="chevron-back-outline"></ion-icon>
+								</div>
+								<div class="swiper-wrap">
+									<div class="swiper-slide" data-index="0">
+										<img src="./image/detail-project/1.jpeg" alt="" />
+										<div class="det">
+											<div class="det-category">
+												<span>ARCHITECTURE</span>
+												<span>INTERIOR</span>
+											</div>
+											<div class="det-item">
+												<span>Theatre de Stoep</span>
+												<div class="btn-open-modal">
+													<ion-icon name="arrow-forward-outline"></ion-icon>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide" data-index="1">
+										<img src="./image/detail-project/2.jpeg" alt="" />
+										<div class="det">
+											<div class="det-category">
+												<span>ARCHITECTURE</span>
+												<span>INTERIOR</span>
+											</div>
+											<div class="det-item">
+												<span>Theatre de Stoep</span>
+												<div class="btn-open-modal">
+													<ion-icon name="arrow-forward-outline"></ion-icon>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide swiper-slide-prev" data-index="2">
+										<img src="./image/detail-project/3.jpeg" alt="" />
+										<div class="det">
+											<div class="det-category">
+												<span>ARCHITECTURE</span>
+												<span>INTERIOR</span>
+											</div>
+											<div class="det-item">
+												<span>Theatre de Stoep</span>
+												<div class="btn-open-modal">
+													<ion-icon name="arrow-forward-outline"></ion-icon>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide swiper-slide-active" data-index="3">
+										<img src="./image/detail-project/1.jpeg" alt="" />
+										<div class="det">
+											<div class="det-category">
+												<span>ARCHITECTURE</span>
+												<span>INTERIOR</span>
+											</div>
+											<div class="det-item">
+												<span>Theatre de Stoep</span>
+												<div class="btn-open-modal">
+													<ion-icon name="arrow-forward-outline"></ion-icon>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide swiper-slide-next" data-index="4">
+										<img src="./image/detail-project/2.jpeg" alt="" />
+										<div class="det">
+											<div class="det-category">
+												<span>ARCHITECTURE</span>
+												<span>INTERIOR</span>
+											</div>
+											<div class="det-item">
+												<span>Theatre de Stoep</span>
+												<div class="btn-open-modal">
+													<ion-icon name="arrow-forward-outline"></ion-icon>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide" data-index="5">
+										<img src="./image/detail-project/3.jpeg" alt="" />
+										<div class="det">
+											<div class="det-category">
+												<span>ARCHITECTURE</span>
+												<span>INTERIOR</span>
+											</div>
+											<div class="det-item">
+												<span>Theatre de Stoep</span>
+												<div class="btn-open-modal">
+													<ion-icon name="arrow-forward-outline"></ion-icon>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="btn-next btn-second">
+									<ion-icon name="chevron-forward-outline"></ion-icon>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
+			<script>
+				const swiperSlides = document.querySelectorAll(".swiper-slide");
+				const btnPrev = document.querySelector(".btn-prev");
+				const btnNext = document.querySelector(".btn-next");
+				let index = parseInt(
+					document.querySelector(".swiper-slide-active").dataset.index
+				);
+
+				btnPrev.addEventListener("click", () => {
+					btnNext.style = "visibility: true";
+
+					removeClass();
+					swiperSlides[index - 2].classList.add("swiper-slide-prev");
+					swiperSlides[index - 1].classList.add("swiper-slide-active");
+					swiperSlides[index].classList.add("swiper-slide-next");
+					index--;
+					if (index <= 1) {
+						btnPrev.style = "visibility: hidden";
+						return;
+					}
+				});
+				btnNext.addEventListener("click", () => {
+					btnPrev.style = "visibility: true";
+					removeClass();
+					swiperSlides[index].classList.add("swiper-slide-prev");
+					swiperSlides[index + 1].classList.add("swiper-slide-active");
+					swiperSlides[index + 2].classList.add("swiper-slide-next");
+					index++;
+					if (index >= swiperSlides.length - 2) {
+						btnNext.style = "visibility: hidden";
+						return;
+					}
+				});
+
+				function removeClass() {
+					swiperSlides.forEach((swiperSlide) => {
+						swiperSlide.classList.remove("swiper-slide-active");
+						swiperSlide.classList.remove("swiper-slide-next");
+						swiperSlide.classList.remove("swiper-slide-prev");
+					});
+				}
+			</script>
 		</main>
 		<!-- <script src="./main.js"></script> -->
 	</body>
