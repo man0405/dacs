@@ -958,6 +958,8 @@ btnNext.addEventListener("click", () => {
 viewMore.forEach((item) =>
 	item.addEventListener("click", () => {
 		openDetailProject();
+		window.scrollTo(0, 0);
+
 	})
 );
 </script>`;
@@ -1200,6 +1202,12 @@ modelOpen.forEach((item) =>
 		addIframe(e);
 	})
 );
+
+const get =document.querySelector(".get");
+get.addEventListener("click", (e) => {
+	openContact(e)  ;
+});
+
 </script>`;
 
 function addIframe(e) {
@@ -1213,6 +1221,51 @@ function openDetailProject() {
 	const script = document.querySelector("main.main-container script");
 	eval(script.textContent);
 	script.parentNode.removeChild(script);
+}
+
+function openContact(e) {
+	e.preventDefault();
+	backdrop.parentNode.classList.add("active");
+	modal.innerHTML = `<div class="contact-us">
+	<h2>Contact Us</h2>
+	<form action="submit">
+		<div class="first-name">
+			<label for="first-name">First Name</label>
+			<input type="text" name="" id="" />
+		</div>
+		<div class="last-name">
+			<label for="last-name">Last Name</label>
+			<input type="text" name="" id="" />
+		</div>
+		<div class="email">
+			<label for="email">Email</label>
+			<input type="email" name="" id="" />
+		</div>
+		<div class="message">
+			<label for="phone">Message</label>
+			<input type="tel" name="" id="" />
+		</div>
+	</form>
+	<div class="send primary-btn btn-full">
+		<span class="text">Send Message</span>
+		<div class="check-box">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+				<path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+			</svg>
+		</div>
+	</div>
+</div>
+<script>
+const btnSend = document.querySelector(".send");
+const Text = document.querySelector(".text");
+btnSend.onclick = () => {
+	Text.innerHTML = "Thanks";
+	btnSend.classList.add("active");
+};</script>
+`;
+
+	const script = document.querySelector(".modal script");
+	eval(script.textContent);
 }
 
 const templates = [templateMain, templateGalerry, templateProject];

@@ -83,6 +83,103 @@ body {
 	}
 }
 
+.contact-us {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 120rem;
+	background-color: white;
+	padding: 20rem;
+	h2 {
+		color: black;
+		font-size: 6rem;
+		font-weight: 400;
+		letter-spacing: 0.2rem;
+		line-height: 1.8;
+		text-align: center;
+		width: 100%;
+		border-bottom: 2px solid var(--primary-color);
+		margin-bottom: 4rem;
+	}
+	form {
+		display: grid;
+		gap: 3rem;
+		width: 100%;
+		margin-bottom: 3rem;
+		grid-template-areas:
+			"area1 area2"
+			"area3 area3"
+			"area4 area4 ";
+		@for $i from 1 through 4 {
+			div:nth-child(#{$i}) {
+				grid-area: area#{$i};
+			}
+		}
+		label {
+			font-size: 2.4rem;
+			font-weight: 300;
+			letter-spacing: 0.2rem;
+			display: block;
+			margin-bottom: 1.2rem;
+		}
+		input {
+			padding: 2rem 2rem;
+			font-size: 2.4rem;
+			width: 100%;
+			outline: none;
+		}
+	}
+	.send {
+		width: 100%;
+		text-align: center;
+		padding: 2rem 3rem;
+		position: relative;
+		background: #2f2f2f;
+		color: #fff;
+		box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		&.active {
+			width: 40%;
+			background: var(--primary-color);
+			transition: 1s;
+			justify-content: space-between;
+			.check-box {
+				right: 0;
+				opacity: 1;
+				transition: 1s;
+			}
+			span {
+				margin-right: 125px;
+				transition: 1s;
+			}
+			svg path {
+				stroke-dashoffset: 0 !important;
+				transition: 1s;
+				transition-delay: 1s;
+			}
+		}
+		.check-box {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			svg {
+				width: 40px;
+				path {
+					stroke-width: 3;
+					stroke: #fff;
+					stroke-dasharray: 34;
+					stroke-dashoffset: 34;
+					stroke-linecap: round;
+				}
+			}
+		}
+	}
+}
+
 @keyframes intro-effect {
 	0% {
 		transform: translateY(-10px);
