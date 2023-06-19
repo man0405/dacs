@@ -37,5 +37,16 @@ button:hover {
 	align-items: center;
 	padding: 1rem 2.2rem;
 	width: fit-content;
+	cursor: pointer;
 	// gap: 0.6rem;
+}
+
+.btn-second {
+	background: rgba(0, 0, 0, 0.7);
+	color: var(--primary-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 4px;
 }
