@@ -1,0 +1,110 @@
+.footer-page{
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 20rem;
+    display: block;
+    width: 100%;
+    height: 50rem;
+    background-color: rgb(28, 38, 62);
+    background-color: rgb(228,228,228);
+    display: flex;
+    justify-content: center;
+    .container{
+        align-items: center;
+        .gmail-container{
+            height: 30rem;
+            width: 1180px;
+            background-color: rgb(343, 165, 57);    
+            display: flex;
+            transform: translateY(-50%);
+            justify-content: center;
+            .box{
+                text-align: center;
+                align-items: center;
+                padding-top: 5rem;
+                .intro{
+                    text-align: center;
+                    font-weight: 10px;
+                    font-size: 40px;
+                }
+                .email-box{
+                    margin-top: 2rem;
+                    padding: 0;
+                    .email-input{
+                        background-color: transparent;
+                        height: 4rem;
+                        border: 1px solid black;
+                        padding: 1rem;
+                        outline: none;
+
+                    }
+                    .email-submit{
+                        height: 4rem;
+                        padding: 1rem;
+                        margin-left: -4px;
+                        border-radius: 0;
+                        background-color: black;
+                        color: white;
+                        border: 0 solid black;
+                    }
+                }
+            }
+        }
+        .information{
+            width: 1180px;
+            height: 70%;
+            transform: translateY(-43%);
+            display: flex;
+            align-items: center;
+            .information-container{
+                height: 45%;
+                width: 100%;
+                display: flex;
+                .information-container-left{
+                    padding: 1rem;
+                    height: 100%;
+                    width: 30%;
+                    display: block;
+                    .header{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 0.5rem;
+                        .logo{
+                            height: 4rem;
+                            width: 4rem;
+                        }
+                        .name{
+                            font-weight: 700;
+                            font-size: 24px;
+                        }
+                    }
+                    .detail{
+                        font-size: small;
+                        padding: 1rem;
+                    }
+                }   
+                .information-container-right{
+                    height: 100%;
+                    width: 70%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    justify-content: space-evenly;
+                    .categorize{
+                        margin-right: 6rem;
+                        .option{
+                            margin-bottom: 1rem;
+                            font-family: 'DM Sans', sans-serif;
+                            font-size: small;
+                            font-weight: 400;
+                        }
+                        .categorize-name{
+                            margin-bottom: 1.5rem;
+                            text-decoration: underline;
+                            font-style: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
