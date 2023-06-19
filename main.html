@@ -81,7 +81,7 @@
 								<ul>
 									<li><a href="">Concept</a></li>
 									<li><a href="">Design</a></li>
-									<li class="3d-model"><a href="">3D Modeling</a></li>
+									<li class="threed-model"><a href="">3D Modeling</a></li>
 								</ul>
 							</div>
 						</div>
@@ -191,8 +191,43 @@
 							</div>
 						</div>
 					</div>
+					<div class="prices">
+						<div class="subtitle">Price Detail</div>
+						<table class="table-prices">
+							<tbody>
+								<tr>
+									<td>Option fermentum</td>
+									<td>$600 - $1150</td>
+								</tr>
+								<tr>
+									<td>Option metus tellus</td>
+									<td>$250 - $350</td>
+								</tr>
+								<tr>
+									<td>Option gravida</td>
+									<td>$43.50 - $93.50</td>
+								</tr>
+								<tr>
+									<td>Option eiusmod</td>
+									<td>$1350 - $2350</td>
+								</tr>
+								<tr>
+									<td>Option tempor</td>
+									<td>$500</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="get-in-touch">
+						<div class="ready"><h3>Ready to Order your Project ?</h3></div>
+						<div class="get">
+							Get In Touch
+							<ion-icon name="chevron-forward-outline"></ion-icon>
+						</div>
+					</div>
 				</div>
 			</section>
+
 			<script>
 				const swiperSlides = document.querySelectorAll(".swiper-slide");
 				const btnPrev = document.querySelector(".btn-prev");
@@ -234,6 +269,57 @@
 						swiperSlide.classList.remove("swiper-slide-prev");
 					});
 				}
+
+				const modal = document.querySelector(".modal");
+				const backdrop = document.querySelector(".backdrop");
+				const threeDModel = document.querySelector(".threed-model a");
+				const modelOpen = document.querySelectorAll(".btn-open-modal");
+				threeDModel.addEventListener("click", (e) => {
+					e.preventDefault();
+					backdrop.parentNode.classList.add("active");
+					modal.innerHTML = `<div class="sketchfab-embed-wrapper">
+				<iframe
+					title="quiet dark bedroom"
+					frameborder="0"
+					allowfullscreen
+					mozallowfullscreen="true"
+					webkitallowfullscreen="true"
+					allow="autoplay; fullscreen; xr-spatial-tracking"
+					xr-spatial-tracking
+					execution-while-out-of-viewport
+					execution-while-not-rendered
+					web-share
+					width="100%"
+					height="100%"
+					src="https://sketchfab.com/models/e5305f336b874a3bb8416778826797d0/embed"
+				>
+				</iframe>
+			</div>`;
+				});
+				modelOpen.forEach((item) =>
+					item.addEventListener("click", (e) => {
+						e.preventDefault();
+						backdrop.parentNode.classList.add("active");
+						modal.innerHTML = `<div class="sketchfab-embed-wrapper">
+				<iframe
+					title="quiet dark bedroom"
+					frameborder="0"
+					allowfullscreen
+					mozallowfullscreen="true"
+					webkitallowfullscreen="true"
+					allow="autoplay; fullscreen; xr-spatial-tracking"
+					xr-spatial-tracking
+					execution-while-out-of-viewport
+					execution-while-not-rendered
+					web-share
+					width="100%"
+					height="100%"
+					src="https://sketchfab.com/models/e5305f336b874a3bb8416778826797d0/embed"
+				>
+				</iframe>
+			</div>`;
+					})
+				);
 			</script>
 		</main>
 		<!-- <script src="./main.js"></script> -->

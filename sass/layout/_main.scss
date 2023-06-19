@@ -501,13 +501,14 @@ main {
 					margin-bottom: 40px;
 				}
 				.swiper-container {
-					position: absolute;
-					left: 50%;
-					transform: translateX(-50%);
-					width: 100vw;
-					overflow: hidden;
+					height: 45rem;
+					margin-bottom: 6rem;
 					.swiper-around {
-						position: relative;
+						position: absolute;
+						left: 50%;
+						overflow: hidden;
+						transform: translateX(-50%);
+						width: 100vw;
 						.swiper-wrap {
 							display: flex;
 							transition: 0.4s ease;
@@ -611,6 +612,104 @@ main {
 								right: 1.8rem;
 							}
 						}
+					}
+				}
+			}
+			.prices {
+				margin-bottom: 6rem;
+				.subtitle {
+					font-size: 2.6rem;
+					font-weight: 600;
+					margin-bottom: 40px;
+				}
+				.table-prices {
+					max-width: 100%;
+					background-color: transparent;
+					border-collapse: collapse;
+					border-spacing: 0;
+					width: 100%;
+					tbody {
+						width: 100%;
+						tr {
+							&:nth-child(odd) {
+								background-color: #f6f6f6;
+							}
+							td {
+								padding: 2.4rem;
+								line-height: 2.8rem;
+								text-align: center;
+								vertical-align: top;
+								&:first-child {
+									border-right: 1px solid var(--second-color);
+								}
+							}
+						}
+					}
+				}
+			}
+			.get-in-touch {
+				margin-bottom: 6rem;
+				position: relative;
+				background-color: #262626;
+				display: flex;
+				align-items: center;
+				padding: 4rem 4rem;
+				justify-content: space-between;
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					width: 46%;
+					background: rgba(255, 255, 255, 0.041);
+				}
+				.ready {
+					h3 {
+						position: relative;
+						color: #8b8b8b;
+						font-size: 1.4rem;
+						font-weight: 600;
+						letter-spacing: 0.2rem;
+						padding-left: 9rem;
+						top: 0.2rem;
+
+						text-transform: uppercase;
+						&::before {
+							content: "";
+							background-color: var(--primary-color);
+							position: absolute;
+							top: 50%;
+							left: 0;
+							width: 5rem;
+							height: 0.2rem;
+						}
+						&::after {
+							content: "";
+							position: absolute;
+							top: -1.5rem;
+							left: -5rem;
+							bottom: -1.5rem;
+							width: 27rem;
+							background: rgba(255, 255, 255, 0.041);
+						}
+					}
+				}
+				.get {
+					z-index: 3;
+					cursor: pointer;
+					color: var(--primary-color);
+					background: none;
+					border: 1px solid rgba(255, 255, 255, 0.1);
+					border-radius: 0px;
+					padding: 14px 30px 14px 40px;
+					display: flex;
+					align-items: center;
+					font-size: 1.4rem;
+					font-weight: 600;
+
+					ion-icon {
+						margin-left: 2rem;
 					}
 				}
 			}

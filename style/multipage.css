@@ -86,6 +86,11 @@ body {
   font-weight: bold;
 }
 
+.sketchfab-embed-wrapper {
+  width: 80rem;
+  height: 50rem;
+}
+
 .line-effect {
   width: 0;
   z-index: 2;
@@ -112,7 +117,6 @@ body {
 .modal-backdrop .modal {
   z-index: 10;
   width: fit-content;
-  height: 90vh;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -707,14 +711,15 @@ main section.project-detail .detail .interior .subtitle {
   margin-bottom: 40px;
 }
 main section.project-detail .detail .interior .swiper-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  overflow: hidden;
+  height: 45rem;
+  margin-bottom: 6rem;
 }
 main section.project-detail .detail .interior .swiper-container .swiper-around {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  transform: translateX(-50%);
+  width: 100vw;
 }
 main section.project-detail .detail .interior .swiper-container .swiper-around .swiper-wrap {
   display: flex;
@@ -815,6 +820,98 @@ main section.project-detail .detail .interior .swiper-container .swiper-around .
 }
 main section.project-detail .detail .interior .swiper-container .swiper-around .btn-second.btn-next {
   right: 1.8rem;
+}
+main section.project-detail .detail .prices {
+  margin-bottom: 6rem;
+}
+main section.project-detail .detail .prices .subtitle {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+main section.project-detail .detail .prices .table-prices {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+main section.project-detail .detail .prices .table-prices tbody {
+  width: 100%;
+}
+main section.project-detail .detail .prices .table-prices tbody tr:nth-child(odd) {
+  background-color: #f6f6f6;
+}
+main section.project-detail .detail .prices .table-prices tbody tr td {
+  padding: 2.4rem;
+  line-height: 2.8rem;
+  text-align: center;
+  vertical-align: top;
+}
+main section.project-detail .detail .prices .table-prices tbody tr td:first-child {
+  border-right: 1px solid var(--second-color);
+}
+main section.project-detail .detail .get-in-touch {
+  margin-bottom: 6rem;
+  position: relative;
+  background-color: #262626;
+  display: flex;
+  align-items: center;
+  padding: 4rem 4rem;
+  justify-content: space-between;
+}
+main section.project-detail .detail .get-in-touch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 46%;
+  background: rgba(255, 255, 255, 0.041);
+}
+main section.project-detail .detail .get-in-touch .ready h3 {
+  position: relative;
+  color: #8b8b8b;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  padding-left: 9rem;
+  top: 0.2rem;
+  text-transform: uppercase;
+}
+main section.project-detail .detail .get-in-touch .ready h3::before {
+  content: "";
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 5rem;
+  height: 0.2rem;
+}
+main section.project-detail .detail .get-in-touch .ready h3::after {
+  content: "";
+  position: absolute;
+  top: -1.5rem;
+  left: -5rem;
+  bottom: -1.5rem;
+  width: 27rem;
+  background: rgba(255, 255, 255, 0.041);
+}
+main section.project-detail .detail .get-in-touch .get {
+  z-index: 3;
+  cursor: pointer;
+  color: var(--primary-color);
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0px;
+  padding: 14px 30px 14px 40px;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+main section.project-detail .detail .get-in-touch .get ion-icon {
+  margin-left: 2rem;
 }
 
 button {
