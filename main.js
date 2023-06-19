@@ -152,7 +152,7 @@ const templateMain = `	<section class="main">
 		<div class="project-image">
 			<img src="./image/project1.png" alt="" />
 		</div>
-		<button class="primary-btn" style="min-width: 1rem">
+		<button class="primary-btn open-model" style="min-width: 1rem">
 			<ion-icon name="send-outline"></ion-icon>
 		</button>
 	</div>
@@ -162,7 +162,7 @@ const templateMain = `	<section class="main">
 		<div class="project-image">
 			<img src="./image/project2.png" alt="" />
 		</div>
-		<button class="primary-btn" style="min-width: 1rem">
+		<button class="primary-btn open-model" style="min-width: 1rem">
 			<ion-icon name="send-outline"></ion-icon>
 		</button>
 	</div>
@@ -172,7 +172,7 @@ const templateMain = `	<section class="main">
 		<div class="project-image">
 			<img src="./image/project3.png" alt="" />
 		</div>
-		<button class="primary-btn" style="min-width: 1rem">
+		<button class="primary-btn open-model" style="min-width: 1rem">
 			<ion-icon name="send-outline"></ion-icon>
 		</button>
 	</div>
@@ -182,7 +182,7 @@ const templateMain = `	<section class="main">
 		<div class="project-image">
 			<img src="./image/project4.png" alt="" />
 		</div>
-		<button class="primary-btn" style="min-width: 1rem">
+		<button class="primary-btn open-model" style="min-width: 1rem">
 			<ion-icon name="send-outline"></ion-icon>
 		</button>
 	</div>
@@ -192,12 +192,23 @@ const templateMain = `	<section class="main">
 const descriptionBanner = document.querySelector(
 	".description-banner span"
 );
+const navItem = document.querySelectorAll(".nav-item");
+
 const textDescription = [
 	"Hạnh phúc là lan tỏa truyền cảm hứng đầy năng lượng",
 	"Hạnh phúc là tình yêu thương xung quanh",
 	"Hạnh phúc là vun tròn tổ ám khắp Việt Nam",
 ];
 let currentIndex = 0;
+const onpenProject = document.querySelectorAll(".open-model");
+
+onpenProject.forEach((item) =>
+    item.addEventListener("click", (e) => {
+		openDetailProject();
+		navItem[0].classList.remove("active")
+		navItem[2].classList.add("active")
+		window.scrollTo(0, 0);
+	}));
 
 function traverseText() {
 	const text = textDescription[currentIndex];
@@ -946,10 +957,263 @@ btnNext.addEventListener("click", () => {
 
 viewMore.forEach((item) =>
 	item.addEventListener("click", () => {
-		console.log("viewMore");
+		openDetailProject();
 	})
 );
 </script>`;
+
+const templateDetailProject = `<section class="project-detail">
+<div class="heading">
+	<h2 class="gray-black-text">
+		Sample <br /><span class="bold">Project 1</span>
+	</h2>
+	<h6>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+		exercitationem voluptatem, cum voluptatibus, reiciendis quo
+		assumenda mollitia doloremque quis voluptate optio! Soluta ab
+		perspiciatis quaerat suscipit quidem aut, corrupti porro!
+	</h6>
+</div>
+<div class="detail">
+	<div class="main-img">
+		<img src="./image/detail-project/main.jpeg" alt="" />
+	</div>
+	<div class="working-process">
+		<div class="subtitle">Working Process</div>
+		<div class="description">
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Necessitatibus minima voluptates, error nobis cumque voluptatem
+				magni harum. Sed ipsum perferendis similique esse vel in
+				reiciendis earum obcaecati ullam. Ullam, quam.
+			</p>
+			<p>
+				Donec a consectetur nulla. Nulla posuere sapien vitae lectus
+				suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat.
+				Curabitur convallis fringilla diam sed aliquam. Sed tempor
+				iaculis massa faucibus feugiat. In fermentum facilisis massa, a
+				consequat purus viverra.
+			</p>
+			<div class="you-get">
+				<span>What You Get : </span>
+				<ul>
+					<li><a href="">Concept</a></li>
+					<li><a href="">Design</a></li>
+					<li class="threed-model"><a href="">3D Modeling</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="interior">
+		<div class="subtitle">Interior Service</div>
+		<div class="swiper-container">
+			<div class="swiper-around">
+				<div class="btn-prev btn-second">
+					<ion-icon name="chevron-back-outline"></ion-icon>
+				</div>
+				<div class="swiper-wrap">
+					<div class="swiper-slide" data-index="0">
+						<img src="./image/detail-project/1.jpeg" alt="" />
+						<div class="det">
+							<div class="det-category">
+								<span>ARCHITECTURE</span>
+								<span>INTERIOR</span>
+							</div>
+							<div class="det-item">
+								<span>Theatre de Stoep</span>
+								<div class="btn-open-modal">
+									<ion-icon name="arrow-forward-outline"></ion-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide" data-index="1">
+						<img src="./image/detail-project/2.jpeg" alt="" />
+						<div class="det">
+							<div class="det-category">
+								<span>ARCHITECTURE</span>
+								<span>INTERIOR</span>
+							</div>
+							<div class="det-item">
+								<span>Theatre de Stoep</span>
+								<div class="btn-open-modal">
+									<ion-icon name="arrow-forward-outline"></ion-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide swiper-slide-prev" data-index="2">
+						<img src="./image/detail-project/3.jpeg" alt="" />
+						<div class="det">
+							<div class="det-category">
+								<span>ARCHITECTURE</span>
+								<span>INTERIOR</span>
+							</div>
+							<div class="det-item">
+								<span>Theatre de Stoep</span>
+								<div class="btn-open-modal">
+									<ion-icon name="arrow-forward-outline"></ion-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide swiper-slide-active" data-index="3">
+						<img src="./image/detail-project/1.jpeg" alt="" />
+						<div class="det">
+							<div class="det-category">
+								<span>ARCHITECTURE</span>
+								<span>INTERIOR</span>
+							</div>
+							<div class="det-item">
+								<span>Theatre de Stoep</span>
+								<div class="btn-open-modal">
+									<ion-icon name="arrow-forward-outline"></ion-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide swiper-slide-next" data-index="4">
+						<img src="./image/detail-project/2.jpeg" alt="" />
+						<div class="det">
+							<div class="det-category">
+								<span>ARCHITECTURE</span>
+								<span>INTERIOR</span>
+							</div>
+							<div class="det-item">
+								<span>Theatre de Stoep</span>
+								<div class="btn-open-modal">
+									<ion-icon name="arrow-forward-outline"></ion-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide" data-index="5">
+						<img src="./image/detail-project/3.jpeg" alt="" />
+						<div class="det">
+							<div class="det-category">
+								<span>ARCHITECTURE</span>
+								<span>INTERIOR</span>
+							</div>
+							<div class="det-item">
+								<span>Theatre de Stoep</span>
+								<div class="btn-open-modal">
+									<ion-icon name="arrow-forward-outline"></ion-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-next btn-second">
+					<ion-icon name="chevron-forward-outline"></ion-icon>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="prices">
+		<div class="subtitle">Price Detail</div>
+		<table class="table-prices">
+			<tbody>
+				<tr>
+					<td>Option fermentum</td>
+					<td>$600 - $1150</td>
+				</tr>
+				<tr>
+					<td>Option metus tellus</td>
+					<td>$250 - $350</td>
+				</tr>
+				<tr>
+					<td>Option gravida</td>
+					<td>$43.50 - $93.50</td>
+				</tr>
+				<tr>
+					<td>Option eiusmod</td>
+					<td>$1350 - $2350</td>
+				</tr>
+				<tr>
+					<td>Option tempor</td>
+					<td>$500</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="get-in-touch">
+		<div class="ready"><h3>Ready to Order your Project ?</h3></div>
+		<div class="get">
+			Get In Touch
+			<ion-icon name="chevron-forward-outline"></ion-icon>
+		</div>
+	</div>
+</div>
+</section>
+
+<script>
+const swiperSlides = document.querySelectorAll(".swiper-slide");
+const btnPrev = document.querySelector(".btn-prev");
+const btnNext = document.querySelector(".btn-next");
+let index = parseInt(
+	document.querySelector(".swiper-slide-active").dataset.index
+);
+
+btnPrev.addEventListener("click", () => {
+	btnNext.style = "visibility: true";
+
+	removeClass();
+	swiperSlides[index - 2].classList.add("swiper-slide-prev");
+	swiperSlides[index - 1].classList.add("swiper-slide-active");
+	swiperSlides[index].classList.add("swiper-slide-next");
+	index--;
+	if (index <= 1) {
+		btnPrev.style = "visibility: hidden";
+		return;
+	}
+});
+btnNext.addEventListener("click", () => {
+	btnPrev.style = "visibility: true";
+	removeClass();
+	swiperSlides[index].classList.add("swiper-slide-prev");
+	swiperSlides[index + 1].classList.add("swiper-slide-active");
+	swiperSlides[index + 2].classList.add("swiper-slide-next");
+	index++;
+	if (index >= swiperSlides.length - 2) {
+		btnNext.style = "visibility: hidden";
+		return;
+	}
+});
+
+function removeClass() {
+	swiperSlides.forEach((swiperSlide) => {
+		swiperSlide.classList.remove("swiper-slide-active");
+		swiperSlide.classList.remove("swiper-slide-next");
+		swiperSlide.classList.remove("swiper-slide-prev");
+	});
+}
+
+const modal = document.querySelector(".modal");
+const backdrop = document.querySelector(".backdrop");
+const threeDModel = document.querySelector(".threed-model a");
+const modelOpen = document.querySelectorAll(".btn-open-modal");
+threeDModel.addEventListener("click", (e) => {
+	addIframe(e);
+});
+modelOpen.forEach((item) =>
+	item.addEventListener("click", (e) => {
+		addIframe(e);
+	})
+);
+</script>`;
+
+function addIframe(e) {
+	e.preventDefault();
+	backdrop.parentNode.classList.add("active");
+	modal.innerHTML = `<div class="sketchfab-embed-wrapper"> <iframe title="quiet dark bedroom" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="100%" height="100%" src="https://sketchfab.com/models/e5305f336b874a3bb8416778826797d0/embed?autospin=1&autostart=1&preload=1&ui_hint=0"> </iframe> </div>`;
+}
+
+function openDetailProject() {
+	main.innerHTML = templateDetailProject;
+	const script = document.querySelector("main.main-container script");
+	eval(script.textContent);
+	script.parentNode.removeChild(script);
+}
 
 const templates = [templateMain, templateGalerry, templateProject];
 

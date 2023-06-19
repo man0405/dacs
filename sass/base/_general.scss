@@ -42,8 +42,8 @@ body {
 }
 
 .sketchfab-embed-wrapper {
-	width: 80rem;
-	height: 50rem;
+	width: 120rem;
+	height: 80rem;
 }
 
 .line-effect {
@@ -60,7 +60,7 @@ body {
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	z-index: 3;
+	z-index: 4;
 	display: none;
 	.backdrop {
 		width: 100%;
