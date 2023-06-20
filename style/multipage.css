@@ -1014,6 +1014,28 @@ main section.project-detail .detail .get-in-touch .get {
 main section.project-detail .detail .get-in-touch .get ion-icon {
   margin-left: 2rem;
 }
+main section.helps {
+  margin-top: 6rem;
+  display: flex;
+}
+main section.helps .contact-information {
+  width: 100%;
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main section.helps .contact-information .address,
+main section.helps .contact-information .mail {
+  font-weight: 300;
+}
+main section.helps .map {
+  width: 100%;
+  flex: 2;
+}
+main section.helps .map iframe {
+  width: 100%;
+}
 
 button {
   background-color: transparent;

@@ -963,6 +963,29 @@ viewMore.forEach((item) =>
 	})
 );
 </script>`;
+const templateHelps = `<section class="helps">
+<div class="contact-information">
+	<h2 class="gray-black-text">
+		Contact <br /><span class="bold">Information</span>
+	</h2>
+	<h4>House Viewer</h4>
+	<h4 class="address">1234 Sample Street Austin Texas 76401</h4>
+	<h4 class="number-phone">512.333.2222</h4>
+	<h4 class="mail">sampleemail@gmail.com</h4>
+	<div class="primary-btn"><a href="tel:339228240">Contact Us</a></div>
+</div>
+<div class="map">
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.7332975516606!2d108.24978007598567!3d15.975298241943936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142108997dc971f%3A0x1295cb3d313469c9!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiB2w6AgVHJ1eeG7gW4gdGjDtG5nIFZp4buHdCAtIEjDoG4!5e0!3m2!1svi!2s!4v1687222202926!5m2!1svi!2s"
+		width="600"
+		height="450"
+		style="border: 0"
+		allowfullscreen=""
+		loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"
+	></iframe>
+</div>
+</section>`;
 
 const templateDetailProject = `<section class="project-detail">
 <div class="heading">
@@ -1268,7 +1291,12 @@ btnSend.onclick = () => {
 	eval(script.textContent);
 }
 
-const templates = [templateMain, templateGalerry, templateProject];
+const templates = [
+	templateMain,
+	templateGalerry,
+	templateProject,
+	templateHelps,
+];
 
 main.innerHTML = templates[0];
 const script = document.querySelector("main.main-container script");

@@ -715,4 +715,27 @@ main {
 			}
 		}
 	}
+	section.helps {
+		margin-top: 6rem;
+		display: flex;
+
+		.contact-information {
+			width: 100%;
+			flex: 1.5;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			.address,
+			.mail {
+				font-weight: 300;
+			}
+		}
+		.map {
+			width: 100%;
+			flex: 2;
+			iframe {
+				width: 100%;
+			}
+		}
+	}
 }
