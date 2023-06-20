@@ -738,4 +738,53 @@ main {
 			}
 		}
 	}
+
+	&:has(section.gallery) + footer {
+		height: 35rem;
+		align-items: center;
+		.container {
+			.gmail-container {
+				display: none;
+			}
+			.information {
+				transform: none;
+			}
+		}
+	}
+	&:has(section.projects) + footer {
+		height: 35rem;
+		align-items: center;
+		.container {
+			.gmail-container {
+				display: none;
+			}
+			.information {
+				transform: none;
+			}
+		}
+	}
+	&:has(section.project-detail) + footer {
+		height: 35rem;
+		align-items: center;
+		.container {
+			.gmail-container {
+				display: none;
+			}
+			.information {
+				transform: none;
+			}
+		}
+	}
+	&:has(section.helps) + footer {
+		height: 35rem;
+		align-items: center;
+		.container {
+			.gmail-container {
+				display: none;
+			}
+			.information {
+				transform: none;
+			}
+		}
+	}
 }
