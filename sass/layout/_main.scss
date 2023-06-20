@@ -418,6 +418,13 @@ main {
 	}
 	section.project-detail {
 		margin-top: 6rem;
+		.back-btn {
+			margin-bottom: 4rem;
+			padding: 0;
+			ion-icon {
+				font-size: 5rem;
+			}
+		}
 		.heading {
 			display: flex;
 			align-items: center;

@@ -734,6 +734,13 @@ main .function .btn-next {
 main section.project-detail {
   margin-top: 6rem;
 }
+main section.project-detail .back-btn {
+  margin-bottom: 4rem;
+  padding: 0;
+}
+main section.project-detail .back-btn ion-icon {
+  font-size: 5rem;
+}
 main section.project-detail .heading {
   display: flex;
   align-items: center;
