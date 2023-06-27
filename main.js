@@ -533,6 +533,7 @@ function clickGalleryItem(index) {
 }
 </script>`;
 const templateProject = `<section class="projects">
+
 <h2 class="project-header gray-black-text">
 	Our <br /><span class="bold">Projects</span>
 </h2>
@@ -988,7 +989,10 @@ const templateHelps = `<section class="helps">
 </section>`;
 
 const templateDetailProject = `<section class="project-detail">
+<div class="primary-btn back-btn">
+<ion-icon name="chevron-back-outline"></ion-icon></div>
 <div class="heading">
+
 	<h2 class="gray-black-text">
 		Sample <br /><span class="bold">Project 1</span>
 	</h2>
@@ -1231,6 +1235,11 @@ get.addEventListener("click", (e) => {
 	openContact(e)  ;
 });
 
+const back = document.querySelector(".back-btn");
+back.addEventListener("click", () => {
+	openProject();
+});
+
 </script>`;
 
 function addIframe(e) {
@@ -1241,6 +1250,13 @@ function addIframe(e) {
 
 function openDetailProject() {
 	main.innerHTML = templateDetailProject;
+	const script = document.querySelector("main.main-container script");
+	eval(script.textContent);
+	script.parentNode.removeChild(script);
+}
+
+function openProject() {
+	main.innerHTML = templates[2];
 	const script = document.querySelector("main.main-container script");
 	eval(script.textContent);
 	script.parentNode.removeChild(script);
